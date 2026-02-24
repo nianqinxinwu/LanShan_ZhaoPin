@@ -1,0 +1,59 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+
+
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('sort')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sort" data-rule="required" class="form-control" name="row[sort]" type="number">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" data-rule="required" class="form-control" name="row[name]" type="text">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('beginprice')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-beginprice" data-rule="required" class="form-control" name="row[beginprice]" type="number">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('endprice')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-endprice" data-rule="required" class="form-control" name="row[endprice]" type="number">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="radio">
+                <label for="row[enabled]-normal"><input  name="row[enabled]" type="radio" value="1" checked=""> 启用</label>
+                <label for="row[enabled]-hidden"><input  name="row[enabled]" type="radio" value="0"> 禁用</label>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

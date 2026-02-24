@@ -1,0 +1,147 @@
+
+
+
+<div class="panel panel-default panel-intro">
+
+    <div class="panel-heading">
+        {:build_heading(null,FALSE)}
+        <ul class="nav nav-tabs" data-field="status">
+            <li class="{:$Think.get.status === null ? 'active' : ''}"><a href="#t-all" data-value="" data-toggle="tab">{:__('All')}</a></li>
+        </ul>
+    </div>
+
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding">
+
+                    <form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+
+
+
+                        <input type="hidden" value="{$row.id|htmlentities}" name="row[id]"/>
+
+
+
+
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2" >{:__('name')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <input id="c-name" data-rule="required" class="form-control" name="row[name]" type="text" value="{$row.name|htmlentities}">
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2" >{:__('companycount')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <input id="c-companycount" data-rule="required" class="form-control" name="row[companycount]" type="number" value="{$row.companycount|htmlentities}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2" >{:__('jobcount')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <input id="c-jobcount" data-rule="required" class="form-control" name="row[jobcount]" type="number" value="{$row.jobcount|htmlentities}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2" >{:__('notecount')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <input id="c-notecount" data-rule="required" class="form-control" name="row[notecount]" type="number" value="{$row.notecount|htmlentities}">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="c-image" class="control-label col-xs-12 col-sm-2"  >{:__('fxbg')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="input-group">
+                                    <input id="c-image" data-rule="" class="form-control" size="50" name="row[fxbg]" type="text" value="{$row.fxbg|htmlentities}">
+                                    <div class="input-group-addon no-border no-padding">
+                                        <span><button type="button" id="plupload-image" class="btn btn-danger plupload" data-input-id="c-image" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-image"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                                        <span><button type="button" id="fachoose-image" class="btn btn-primary fachoose" data-input-id="c-image" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                                    </div>
+                                    <span class="msg-box n-right" for="c-image"></span>
+                                </div>
+                                <ul class="row list-inline plupload-preview" id="p-image"></ul>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="c-image" class="control-label col-xs-12 col-sm-2"  >{:__('sharebg')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="input-group">
+                                    <input id="c-image2" data-rule="" class="form-control" size="50" name="row[sharebg]" type="text" value="{$row.sharebg|htmlentities}">
+                                    <div class="input-group-addon no-border no-padding">
+                                        <span><button type="button" id="plupload-image2" class="btn btn-danger plupload" data-input-id="c-image2" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-image2"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                                        <span><button type="button" id="fachoose-image2" class="btn btn-primary fachoose" data-input-id="c-image2" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                                    </div>
+                                    <span class="msg-box n-right" for="c-image2"></span>
+                                </div>
+                                <ul class="row list-inline plupload-preview" id="p-image2"></ul>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-group" data-field="description">
+                            <label for="c-description" class="control-label col-xs-12 col-sm-2">{:__('content')}</label>
+                            <div class="col-xs-12 col-sm-8">
+
+                                <textarea id="c-content" class="form-control editor" name="row[content]" cols="30" rows="10" >{$row.content|htmlentities}</textarea>
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group" data-field="description">
+                            <label for="c-description" class="control-label col-xs-12 col-sm-2">{:__('rulecontent')}</label>
+                            <div class="col-xs-12 col-sm-8">
+
+                                <textarea id="c-rulecontent" class="form-control editor" name="row[rulecontent]" cols="30" rows="10" >{$row.rulecontent|htmlentities}</textarea>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >审核</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="radio">
+                <label for="row[enabled]-normal"><input  name="row[ischeck]" type="radio" value="1" {$row.ischeck == 1 ? 'checked' :''}> 是</label>
+                <label for="row[enabled]-hidden"><input  name="row[ischeck]" type="radio" value="0" {$row.ischeck == 0 ? 'checked' :''}> 否</label>
+            </div>
+        </div>
+    </div>
+
+
+
+                        <div class="form-group layer-footer">
+                            <label class="control-label col-xs-12 col-sm-2"></label>
+                            <div class="col-xs-12 col-sm-8">
+                                <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+                                <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

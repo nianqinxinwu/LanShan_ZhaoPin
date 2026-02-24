@@ -1,0 +1,87 @@
+<?php
+
+namespace app\admin\controller\csmsignin;
+
+use addons\csmsignin\library\xcore\xcore\utils\XcDaoUtils;
+use app\common\controller\Backend;
+
+/**
+ * 第三方登录管理
+ *
+ * @icon fa fa-circle-o
+ */
+class Cloginthird extends Backend
+{
+
+    /**
+     * Cloginthird模型对象
+     * @var \app\admin\model\csmsignin\Cloginthird
+     */
+    protected $model = null;
+
+    public function _initialize()
+    {
+        parent::_initialize();
+        $this->model = new \app\admin\model\csmsignin\Cloginthird;
+        $this->view->assign("statusList", $this->model->getStatusList());
+    }
+
+
+
+    /**
+     * 默认生成的控制器所继承的父类中有index/add/edit/del/multi五个基础方法、destroy/restore/recyclebin三个回收站方法
+     * 因此在当前控制器中可不用编写增删改查的代码,除非需要自己控制这部分逻辑
+     * 需要将application/admin/library/traits/Backend.php中对应的方法复制到当前控制器,然后进行修改
+     */
+    public function index()
+    {
+        //设置过滤方法
+        $this->request->filter(['strip_tags', 'trim']);
+        if (false === $this->request->isAjax()) {
+            return $this->view->fetch();
+        }
+        //如果发送的来源是 Selectpage，则转发到 Selectpage
+        if ($this->request->request('keyField')) {
+            return $this->selectpage();
+        }
+        [$where, $sort, $order, $offset, $limit] = $this->buildparams();
+        $list = $this->model
+            ->where($where)
+            ->order($sort, $order)
+            ->paginate($limit);
+
+        XcDaoUtils::bindDbListColumn($list,"user_id",new \app\admin\model\User(),"fauser",["nickname"]);
+         
+        $result = ['total' => $list->total(), 'rows' => $list->items()];
+        return json($result);
+    }
+
+    //添加
+    public function add() {
+        return;
+    }
+    //编辑
+    public function edit($ids = null) {
+        return;
+    }
+    //删除
+    public function del($ids = null) {
+        return;
+    }
+    //回收站列表
+    public function recyclebin() {
+        return;
+    }
+    //回收站(真实删除或清空)
+    public function destroy($ids = null) {
+        return;
+    }
+    //回收站还原
+    public function restore($ids = null) {
+        return;
+    }
+    //批量操作(修改状态)
+    public function multi($ids = null) {
+        return;
+    }
+}

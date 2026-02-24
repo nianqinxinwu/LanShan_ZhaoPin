@@ -1,0 +1,55 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <input type="hidden" value="{$row.id|htmlentities}" name="row[id]"/>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('companyname')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="companyid form-control" name="row[companyid]"    >
+
+                <option value="0">请选择企业</option>
+                {foreach name="companylist" item="v"}
+                <option value="{$v.id|htmlentities}" {eq name="$row.companyid" value="$v.id"}selected{/eq} >{$v.companyname|htmlentities}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" data-rule="required" class="form-control" value="{$row.name|htmlentities}"  name="row[name]" type="text">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('password')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-password" class="form-control" name="row[password]" type="password">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="radio">
+                <label for="row[status]-normal"><input  name="row[status]" type="radio" value="1" {$row.status == 1 ? 'checked' :''}> 启用</label>
+                <label for="row[status]-hidden"><input  name="row[status]" type="radio" value="0" {$row.status == 0 ? 'checked' :''}> 禁用</label>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,230 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <input type="hidden" value="{$row.id|htmlentities}" name="row[id]"/>
+
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('sort')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sort" data-rule="required" class="form-control" name="row[sort]" value="{$row.sort|htmlentities}"  type="number">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('companyid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="companyid form-control" name="row[companyid]"    >
+
+                <option value="0">请选择企业</option>
+                {foreach name="companylist" item="v"}
+                <option value="{$v.id|htmlentities}" {eq name="$row.companyid" value="$v.id"}selected{/eq} >{$v.companyname|htmlentities}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="type form-control" name="row[type]"    >
+
+                <option value="0">请选择工作性质</option>
+                {foreach name="worktypelist" item="v"}
+                <option value="{$v.id|htmlentities}" {eq name="$row.type" value="$v.id"}selected{/eq} >{$v.name|htmlentities}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('jobtitle')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-jobtitle" data-rule="required" class="form-control" name="row[jobtitle]" value="{$row.jobtitle|htmlentities}" type="text">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('jobcatename')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <select class="worktype form-control" name="row[worktype]"    >
+
+                <option value="0">请选择行业</option>
+                {foreach name="jobcatelist" item="v"}
+                <option value="{$v.id|htmlentities}" {eq name="$row.worktype" value="$v.id"}selected{/eq}  >{$v.name|htmlentities}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('money')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <select class="type form-control" name="row[jobpriceid]"    >
+
+                <option value="0">请选择薪资待遇</option>
+                {foreach name="jobpricelist" item="v"}
+                <option value="{$v.id|htmlentities}" {eq name="$row.jobpriceid" value="$v.id"}selected{/eq} >{$v.name|htmlentities}</option>
+                {/foreach}
+            </select>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('num')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-num" data-rule="required" class="form-control" name="row[num]" value="{$row.num|htmlentities}" type="number">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('age')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-age" data-rule="required" class="form-control" name="row[age]" value="{$row.age|htmlentities}" type="text">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('education')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <select class="education form-control" name="row[education]"     >
+                <option value="" >请选择学历要求</option>
+                <option value="不限" {eq name="$row.education" value="不限"}selected{/eq} >不限</option>
+                <option value="初中以上" {eq name="$row.education" value="初中以上"}selected{/eq} >初中以上</option>
+                <option value="高中以上" {eq name="$row.education" value="高中以上"}selected{/eq} >高中以上</option>
+                <option value="中技以上" {eq name="$row.education" value="中技以上"}selected{/eq} >中技以上</option>
+                <option value="中专以上" {eq name="$row.education" value="中专以上"}selected{/eq} >中专以上</option>
+                <option value="大专以上" {eq name="$row.education" value="大专以上"}selected{/eq} >大专以上</option>
+                <option value="本科以上" {eq name="$row.education" value="本科以上"}selected{/eq} >本科以上</option>
+                <option value="硕士以上" {eq name="$row.education" value="硕士以上"}selected{/eq} >硕士以上</option>
+                <option value="博士以上" {eq name="$row.education" value="博士以上"}selected{/eq} >博士以上</option>
+                <option value="博后" {eq name="$row.education" value="博后"}selected{/eq} >博后</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('express')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <select class="express form-control" name="row[express]"     >
+                <option value="" >请选择工作经验</option>
+                <option value="无经验" {eq name="$row.express" value="无经验"}selected{/eq} >无经验</option>
+                <option value="1年以下" {eq name="$row.express" value="1年以下"}selected{/eq} >1年以下</option>
+                <option value="1-3年" {eq name="$row.express" value="1-3年"}selected{/eq} >1-3年</option>
+                <option value="3-5年" {eq name="$row.express" value="3-5年"}selected{/eq} >3-5年</option>
+                <option value="5-10年" {eq name="$row.express" value="5-10年"}selected{/eq} >5-10年</option>
+                <option value="10年以上" {eq name="$row.express" value="10年以上"}selected{/eq} >10年以上</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('sex')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+
+            <div class="radio">
+                <label for="row[sex]-normal"><input  name="row[sex]" type="radio" value="1" {$row.sex == 1 ? 'checked' :''} > 男</label>
+                <label for="row[sex]-hidden"><input  name="row[sex]" type="radio" value="2" {$row.sex == 2 ? 'checked' :''}> 女</label>
+                <label for="row[sex]-hidden"><input  name="row[sex]" type="radio" value="0" {$row.sex == 0 ? 'checked' :''}> 男女不限</label>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('special')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="checkbox">
+                {foreach name="speciallist" item="v"}
+                <label for="row[special]-{$key|htmlentities}"><input id="row[special]-{$key|htmlentities}"  name="row[special][]" type="checkbox" value="{$v|htmlentities}"  {in name="$v" value="$row.special" type="in"} checked {/in} >{$v|htmlentities}</label>
+
+                {/foreach}
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="form-group" data-field="description">
+        <label for="c-description" class="control-label col-xs-12 col-sm-2">{:__('content')}</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <textarea id="c-content" class="form-control editor" name="row[content]" cols="30" rows="10" >{$row.content|htmlentities}</textarea>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('isrecommand')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="radio">
+                <label for="row[isrecommand]-normal"><input  name="row[isrecommand]" type="radio" value="1" {$row.isrecommand == 1 ? 'checked' :''}> 是 </label>
+                <label for="row[isrecommand]-hidden"><input  name="row[isrecommand]" type="radio" value="0" {$row.isrecommand == 0 ? 'checked' :''}>否</label>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('ischeck')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="radio">
+                <label for="row[ischeck]-normal"><input  name="row[ischeck]" type="radio" value="1" {$row.ischeck == 1 ? 'checked' :''}> 审核通过</label>
+                <label for="row[ischeck]-hidden"><input  name="row[ischeck]" type="radio" value="0" {$row.ischeck == 0 ? 'checked' :''}> 未审核</label>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="radio">
+                <label for="row[status]-normal"><input  name="row[status]" type="radio" value="1" {$row.status == 1 ? 'checked' :''}> 启用</label>
+                <label for="row[status]-hidden"><input  name="row[status]" type="radio" value="0" {$row.status == 0 ? 'checked' :''}> 禁用</label>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

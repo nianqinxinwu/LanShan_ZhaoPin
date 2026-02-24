@@ -1,0 +1,241 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+
+
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('sort')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sort" data-rule="required" class="form-control" name="row[sort]" type="number">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('cityname')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="city form-control" name="row[cityid]"  id="selectCity"  >
+
+                <option value="0">请选择城市</option>
+                {foreach name="citylist" item="v"}
+                <option value="{$v.id|htmlentities}" >{$v.name|htmlentities}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('areaname')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="area form-control" name="row[areaid]"  id="areaid"  >
+
+
+            </select>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('companyname')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-companyname" data-rule="required" class="form-control" name="row[companyname]" type="text">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('shortname')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-shortname" data-rule="required" class="form-control" name="row[shortname]" type="text">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('companycate')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-companycate" data-rule="required" class="form-control" name="row[companycate]" type="text">
+            
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('companytype')}:</label>
+        <div class="col-xs-12 col-sm-8">
+               <select class="companytype form-control" name="row[companytype]"     >
+                <option value="" >请选择企业性质</option>
+                <option value="私营" >私营</option>
+                <option value="国有" >国有</option>
+                <option value="政府机关" >政府机关</option>
+                <option value="事业单位" >事业单位</option>
+                <option value="股份制" >股份制</option>
+                <option value="上市公司" >上市公司</option>
+                <option value="中外合资/合作" >中外合资/合作</option>
+                <option value="外商独资/办事处" >外商独资/办事处</option>
+                <option value="非盈利机构" >非盈利机构</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('companyworker')}:</label>
+        <div class="col-xs-12 col-sm-8">
+              <select class="companyworker form-control" name="row[companyworker]"     >
+                <option value="" >请选择人员规模</option>
+                <option value="1-5人" >1-5人</option>
+                <option value="5-10人" >5-10人</option>
+                <option value="10-20人" >10-20人</option>
+                <option value="20-50人" >20-50人</option>
+                <option value="50人以上" >50人以上</option>
+
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('mastername')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-mastername" data-rule="required" class="form-control" name="row[mastername]" type="text">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('tel')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-tel" data-rule="required" class="form-control" name="row[tel]" type="text">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('weixin')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-weixin" data-rule="required" class="form-control" name="row[weixin]" type="text">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('address')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-address" data-rule="required" class="form-control" name="row[address]" type="text">
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <label class="control-label col-xs-12 col-sm-2" >{:__('lat')}:</label>
+
+    <div class="col-xs-12 col-sm-8">
+
+
+        <div class="form-inline">
+                <input id="c-lng" class="form-control" name="row[lng]" type="text" value="">
+
+            <input id="c-lat" class="form-control" name="row[lat]" type="text" value="">
+
+            <a href="javascript:" data-lat-id="c-lat" data-lng-id = "c-lng" data-toggle="addresspicker" class="btn btn-primary btn-select-link" title="获取位置" style="margin-left:3px;"><i class="fa fa-link"></i> 获取位置</a>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    </div>
+
+
+    <div class="form-group">
+        <label for="c-image" class="control-label col-xs-12 col-sm-2"  >{:__('thumb')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-image" data-rule="" class="form-control" size="50" name="row[thumb]" type="text">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-image" class="btn btn-danger plupload" data-input-id="c-image" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-image"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-image" class="btn btn-primary fachoose" data-input-id="c-image" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-image"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-image"></ul>
+        </div>
+    </div>
+
+
+    <div class="form-group" data-field="images">
+        <label for="c-image" class="control-label col-xs-12 col-sm-2">{:__('companyimg')}</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-images" class="form-control" size="50" name="row[companyimg]" type="text" value="" placeholder="组图可以直接从正文进行提取,可以为空">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-images" class="btn btn-danger plupload" data-input-id="c-images" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="true" data-preview-id="p-images"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-images" class="btn btn-primary fachoose" data-input-id="c-images" data-mimetype="image/*" data-multiple="true"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-images"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-images"></ul>
+        </div>
+    </div>
+
+
+    <div class="form-group" data-field="images">
+        <label for="c-images2" class="control-label col-xs-12 col-sm-2">{:__('cardimg')}</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-images2" class="form-control" size="50" name="row[cardimg]" type="text" value="" placeholder="组图可以直接从正文进行提取,可以为空">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-images2" class="btn btn-danger plupload" data-input-id="c-images2" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="true" data-preview-id="p-images2"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-images2" class="btn btn-primary fachoose" data-input-id="c-images2" data-mimetype="image/*" data-multiple="true"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-images2"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-images2"></ul>
+        </div>
+    </div>
+
+
+
+    <div class="form-group" data-field="description">
+        <label for="c-description" class="control-label col-xs-12 col-sm-2">{:__('content')}</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <textarea id="c-content" class="form-control editor" name="row[content]" cols="30" rows="10"></textarea>
+
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('isrecommand')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="radio">
+                <label for="row[isrecommand]-normal"><input  name="row[isrecommand]" type="radio" value="1" checked=""> 是</label>
+                <label for="row[isrecommand]-hidden"><input  name="row[isrecommand]" type="radio" value="0"> 否</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="radio">
+                <label for="row[status]-normal"><input  name="row[status]" type="radio" value="1" checked=""> 启用</label>
+                <label for="row[status]-hidden"><input  name="row[status]" type="radio" value="0"> 禁用</label>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

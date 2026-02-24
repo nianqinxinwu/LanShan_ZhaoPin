@@ -1,0 +1,269 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+
+    <input type="hidden" value="{$row.id|htmlentities}" name="row[id]"/>
+
+
+
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('cityid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="city form-control" name="row[cityid]"  id="selectCity"  >
+
+                <option value="0">请选择城市</option>
+                {foreach name="citylist" item="v"}
+                <option value="{$v.id|htmlentities}"  {eq name="$row.cityid" value="$v.id"}selected{/eq}>{$v.name|htmlentities}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('areaid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="area form-control" name="row[areaid]"  id="areaid"  >
+                {foreach name="arealist" item="v"}
+                <option value="{$v.id|htmlentities}" {eq name="$row.areaid" value="$v.id"}selected{/eq} >{$v.name|htmlentities}</option>
+                {/foreach}
+
+            </select>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="c-image" class="control-label col-xs-12 col-sm-2"  >{:__('avatarUrl')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-image" data-rule="" class="form-control" size="50" name="row[avatarUrl]" type="text" value="{$row.avatarUrl|htmlentities}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-image" class="btn btn-danger plupload" data-input-id="c-image" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-image"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-image" class="btn btn-primary fachoose" data-input-id="c-image" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-image"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-image"></ul>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" data-rule="required" class="form-control" name="row[name]" type="text" value="{$row.name|htmlentities}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('jobtitle')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-jobtitle" data-rule="required" class="form-control" name="row[jobtitle]" type="text" value="{$row.jobtitle|htmlentities}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('sex')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+
+            <div class="radio">
+                <label for="row[sex]-normal"><input  name="row[sex]" type="radio" value="1" checked=""> 男</label>
+                <label for="row[sex]-hidden"><input  name="row[sex]" type="radio" value="0"> 女</label>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('birthday')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="birthday form-control" name="row[birthday]"    >
+
+                <option value="" >请选择出生年份</option>
+                {foreach name="birthdaylist" item="v"}
+                <option value="{$v|htmlentities}" {eq name="$row.birthday" value="$v"}selected{/eq} >{$v|htmlentities}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('education')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <select class="education form-control" name="row[education]"     >
+                <option value="" >请选择学历要求</option>
+                <option value="不限" {eq name="$row.education" value="不限"}selected{/eq} >不限</option>
+                <option value="初中以上" {eq name="$row.education" value="初中以上"}selected{/eq} >初中以上</option>
+                <option value="高中以上" {eq name="$row.education" value="高中以上"}selected{/eq} >高中以上</option>
+                <option value="中技以上" {eq name="$row.education" value="中技以上"}selected{/eq} >中技以上</option>
+                <option value="中专以上" {eq name="$row.education" value="中专以上"}selected{/eq} >中专以上</option>
+                <option value="大专以上" {eq name="$row.education" value="大专以上"}selected{/eq} >大专以上</option>
+                <option value="本科以上" {eq name="$row.education" value="本科以上"}selected{/eq} >本科以上</option>
+                <option value="硕士以上" {eq name="$row.education" value="硕士以上"}selected{/eq} >硕士以上</option>
+                <option value="博士以上" {eq name="$row.education" value="博士以上"}selected{/eq} >博士以上</option>
+                <option value="博后" {eq name="$row.education" value="博后"}selected{/eq} >博后</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('express')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <select class="express form-control" name="row[express]"     >
+                <option value="" >请选择工作经验</option>
+                <option value="无经验" {eq name="$row.express" value="无经验"}selected{/eq} >无经验</option>
+                <option value="1年以下" {eq name="$row.express" value="1年以下"}selected{/eq} >1年以下</option>
+                <option value="1-3年" {eq name="$row.express" value="1-3年"}selected{/eq} >1-3年</option>
+                <option value="3-5年" {eq name="$row.express" value="3-5年"}selected{/eq} >3-5年</option>
+                <option value="5-10年" {eq name="$row.express" value="5-10年"}selected{/eq} >5-10年</option>
+                <option value="10年以上" {eq name="$row.express" value="10年以上"}selected{/eq} >10年以上</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('address')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-address" data-rule="required" class="form-control" name="row[address]" value="{$row.address|htmlentities}" type="text">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('tel')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-tel" data-rule="required" class="form-control" name="row[tel]" value="{$row.tel|htmlentities}" type="text">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('current')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="type form-control" name="row[currentstatus]"    >
+
+                <option value="0">请选择目前状态</option>
+                {foreach name="currentlist" item="v"}
+                <option value="{$v.name|htmlentities}" {eq name="$row.currentstatus" value="$v.name"}selected{/eq}>{$v.name|htmlentities}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('worktypeid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="worktypeid form-control" name="row[worktypeid]"    >
+
+                <option value="0">请选择工作性质</option>
+                {foreach name="worktypelist" item="v"}
+                <option value="{$v.id|htmlentities}" {eq name="$row.worktypeid" value="$v.id"}selected{/eq} >{$v.name|htmlentities}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('jobcateid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <select class="jobcateid  form-control" name="row[jobcateid]"    >
+
+                <option value="0">请选择行业</option>
+                {foreach name="jobcatelist" item="v"}
+                <option value="{$v.id|htmlentities}"  {eq name="$row.jobcateid" value="$v.id"}selected{/eq}  >{$v.name|htmlentities}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('money')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <select class="type form-control" name="row[jobpriceid]"    >
+
+                <option value="0">请选择薪资待遇</option>
+                {foreach name="jobpricelist" item="v"}
+                <option value="{$v.id|htmlentities}" {eq name="$row.jobpriceid" value="$v.id"}selected{/eq} >{$v.name|htmlentities}</option>
+                {/foreach}
+            </select>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="form-group" data-field="description">
+        <label for="c-description" class="control-label col-xs-12 col-sm-2">{:__('content')}</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <textarea id="c-content" class="form-control editor" name="row[content]" cols="30" rows="10" >{$row.content|htmlentities}</textarea>
+
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2" >{:__('enabled')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="radio">
+                <label for="row[status]]-normal"><input  name="row[status]" type="radio" value="1"  {$row.status == 1 ? 'checked' :''}> 启用</label>
+                <label for="row[status]]-hidden"><input  name="row[status]]" type="radio" value="0"  {$row.status == 0 ? 'checked' :''}> 禁用</label>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
