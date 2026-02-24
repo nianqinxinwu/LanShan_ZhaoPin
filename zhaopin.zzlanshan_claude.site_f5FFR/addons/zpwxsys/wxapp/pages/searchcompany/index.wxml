@@ -1,0 +1,81 @@
+ <view class="container">
+ <form bindsubmit="bindSave">
+<view class="search">
+	<icon type="search" size="14"></icon>
+	<input type="text" placeholder="请输入相关信息" placeholder-class="search_plac" confirm-type="search"  name="keyword" ></input>
+	<button formType="submit">搜索</button>
+</view>
+  </form>
+
+  <view class="news">
+
+   
+    <view class="joblist_2" wx:for="{{companylist}}">
+                              <view class="title_2" bindtap="toCompanyDetial" data-id="{{item.id}}">
+  
+                                <view class="jobinfo_2">
+
+                                  <view class="logo">
+                                    <image src="{{item.thumb}}"></image>
+                                  </view>
+  
+                                      <view class="jobinfoleft_2">
+                                                      <view class="address_2">
+                                                              <view class="jobname_2">{{item.companyname}} </view>  
+  
+                                                              <view  class="moneyinfo_2">
+                                                              
+                                                              
+                                                              </view>
+                                                             
+                                                      </view>
+  
+                                                
+  
+                                                      <view class="special_2">
+                                                      <!--
+                                                                  <view class="items_2" wx:for="{{item.special}}" wx:for-item="itemSpecial">{{itemSpecial}}</view>
+                                                    -->
+                                                    <view class="items_2" >{{item.companytype}}</view> 
+                                                    <view class="items_2" >{{item.companyworker}}</view>
+                                                    <view class="items_2" >{{item.companycate}}</view>
+                                                      </view>
+   
+                                        </view>
+  
+                                   
+  
+  
+                              
+                              </view>
+  
+  
+  
+  
+                                         <view class="detail_2">
+                                            
+                                             <view class="info_2">
+                                            
+                                                    <view class="companyinfo_3" style="font-size:.9rem;"> 
+                                                  <view>{{item.jobcount}}个职位在招</view>  <block wx:for="{{item.joblist}}"  wx:for-index="itemIndex" wx:for-item="itemJob"  > <view wx:if="{{itemIndex<2}}">{{itemJob.jobtitle}}</view></block>
+                                                       
+                                                    </view>
+                                                
+                                              </view>
+                                        </view>
+                              </view>
+                  </view>
+    
+
+
+
+
+
+
+</view>
+
+<view class="loadmore" hidden='{{loadmore}}'>
+	<text>未查找相关信息</text>
+</view>
+    </view>
+<!--news end-->

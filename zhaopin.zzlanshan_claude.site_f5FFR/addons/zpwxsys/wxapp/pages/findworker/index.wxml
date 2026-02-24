@@ -1,0 +1,177 @@
+
+<view class="container_2">
+
+
+
+  <view class="{{scrollTop>85 && noteln > 7 ? 'header_2_fixed' : 'header_2'}}" >
+	<navigator url="../city/index?id=2" hover-class="none">
+
+    <view class="city_2">
+     <text class="fa fa-map-marker  fa-lg"></text> {{city}}
+    </view>
+
+	</navigator>
+    <view class="search_2" bindtap='toSelectNote'>
+      	<icon type="search" size="14"/><view>请搜索相关简历</view>
+    </view>
+</view>
+
+
+
+
+
+
+<view class="{{(scrollTop>85 && noteln > 7)||(scrollTop==146) ? 'selectcars_fixed' : 'selectcars'}}">
+ 
+ 
+ 
+
+<view class="itemselectcars"  bindtap="toSelectArea" data-id="1">{{areatitle  ? areatitle : '区域'}}<image src="../../imgs/icon/down.png" ></image>
+</view>
+
+<view class="itemselectcars"  style="width:30%;" bindtap="toSelectCate">{{catetitle ? catetitle : '行业'}}<image src="../../imgs/icon/down.png" ></image></view>
+
+<view class="itemselectcars" style="width:30%;" bindtap="toSelectEdu">{{edutitle ? edutitle : '学历'}} <image src="../../imgs/icon/down.png" ></image></view>
+
+
+<view class="itemselectcars" style="width:15%;"  bindtap="toSelectNote">筛选 <image src="../../imgs/icon/select2.png" style="width:35rpx;height:35rpx;" ></image></view>
+
+
+
+
+
+
+<view class="select_cars" hidden="{{isArea}}" style="top: 115px;">
+
+
+
+  <view  class="select_cars_list " bindtap='SelectAreaItem' data-title="全部"  data-id="0" >
+                    <text>全部</text>
+           
+                    <image wx:if="{{areaid == 0}}" src="../../imgs/icon/dui.png"></image>
+                
+                </view>
+
+                <view wx:for="{{arealist}}" class="select_cars_list " bindtap='SelectAreaItem' data-title="{{item.name}}"  data-id="{{item.id}}" >
+                    <text>{{item.name}}</text>
+           
+                    <image wx:if="{{areaid == item.id}}" src="../../imgs/icon/dui.png"></image>
+                
+                </view>
+                
+  </view>
+
+
+
+</view>
+
+<view class="small_overlay" hidden="{{isArea}}"  ></view>
+
+
+<view class="select_price" hidden="{{isEdu}}">
+<view class="item" style="width:180rpx;"  bindtap='SelectEduItem' data-title='不限' data-id="不限" >不限</view>
+<view class="item" bindtap='SelectEduItem' data-title='初中' data-id="初中" >初中</view>
+<view class="item" bindtap='SelectEduItem' data-title='高中'  data-id="高中" >高中</view>
+<view class="item" bindtap='SelectEduItem' data-title='中技'  data-id="中技">中技</view>
+<view class="item" bindtap='SelectEduItem' data-title='中专' data-id="中专">中专</view>
+<view class="item" bindtap='SelectEduItem' data-title='大专' data-id="大专">大专</view>
+<view class="item" bindtap='SelectEduItem' data-title='本科' data-id="本科">本科</view>
+<view class="item" bindtap='SelectEduItem' data-title='硕士' data-id="硕士">硕士</view>
+<view class="item" bindtap='SelectEduItem' data-title='博士' data-id="博士">博士</view>
+<view class="item" bindtap='SelectEduItem' data-title='博后' data-id="博后">博后</view>
+
+</view>
+
+
+<view class="small_overlay" hidden="{{isEdu}}" ></view>
+
+
+
+
+
+<view class="select_price" hidden="{{isCate}}">
+
+
+<view class="item" style="width:180rpx;"  bindtap='SelectCateItem' data-title='不限' data-id="0" >不限</view>
+
+<view class="item"  wx:for="{{jobcatelist}}" bindtap='SelectCateItem' data-title='{{item.name}}' data-id="{{item.id}}" >{{item.name}}</view>
+
+
+</view>
+
+
+<view class="small_overlay" hidden="{{isCate}}" ></view>
+
+
+
+
+
+
+
+
+<!-- 列表 -->
+<view class="news">
+          <view class="newslist" wx:for="{{notelist}}">
+                            <view class="title" bindtap="toWorkerDetail"  data-id="{{item.id}}">
+                                     
+
+                                       <view class="detail">
+                                       
+                                           <view class="info">
+                                            <view>{{item.name}} </view>
+                                            <view> {{item.sex == 1 ? '男' : '女'}} / {{item.age}}岁 / {{item.education}} / {{item.express}} </view>
+                                            <view class="jobmoney">意向职位: <text> {{item.jobtitle}}</text></view>
+                                            </view>
+
+                                            <view class="pic">
+                                           <image src="{{item.avatarUrl}}"></image>
+
+                                        
+
+                                           <text class="time">{{item.refreshtime}}</text>
+
+                                           <image src="../../imgs/icon/{{item.sex == 1 ? 'man' : 'sex'}}.png" class="footimg" style="width:30rpx;height:30rpx;"></image>
+
+                                           </view>
+
+                                        
+
+                                      </view>
+                            </view>
+                </view>
+
+
+
+<view class="logincompany"  wx:if="{{companyid == 0}}">
+
+<view>成为企业会员，高效挑选人才!</view>
+
+<view><button bindtap="toLogin">登录企业</button></view>
+<view bindtap="doCall" data-tel ="{{intro.tel}}">客服服务热线:{{intro.tel}}</view>
+
+</view>
+
+
+
+
+
+
+</view>
+
+
+</view>
+
+
+
+<!-- 加载更多 -->
+<view class="loadmore">
+	<text>{{loadMore}}</text>
+</view>
+
+<view class="u-tap-btn">
+
+  <button class="u-go-home2" open-type='contact'>
+<view class="iconfont fa fa-comments-o" ></view>
+  </button>
+</view>
+

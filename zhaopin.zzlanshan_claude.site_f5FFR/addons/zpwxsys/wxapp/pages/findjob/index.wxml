@@ -1,0 +1,154 @@
+<view class="container_2">
+
+<!-- 搜索栏 -->
+<view class="search-bar">
+    <navigator url="../city/index?id=1" hover-class="none" class="search-city">
+        <text class="fa fa-map-marker"></text> {{city ? city : '全国'}}
+        <text class="fa fa-angle-down"></text>
+    </navigator>
+    <view class="search-input">
+        <icon type="search" size="14" />
+        <input type="text" placeholder="搜索你想要找的任务" value="{{searchKeyword}}"
+               bindinput="onSearchInput" bindconfirm="doSearch" confirm-type="search" />
+    </view>
+</view>
+
+<!-- 筛选栏 -->
+<view class="filter-bar">
+    <view class="filter-item {{!isArea ? 'filter-item-active' : ''}}" bindtap="toSelectArea">
+        <text>{{areatitle ? areatitle : '区域'}}</text>
+        <text class="fa fa-angle-down filter-arrow"></text>
+    </view>
+    <view class="filter-item {{!isCateNew ? 'filter-item-active' : ''}}" bindtap="toSelectCateNew">
+        <text>{{cateNewTitle ? cateNewTitle : '分类'}}</text>
+        <text class="fa fa-angle-down filter-arrow"></text>
+    </view>
+    <view class="filter-item {{!isSettle ? 'filter-item-active' : ''}}" bindtap="toSelectSettle">
+        <text>{{settleTitle ? settleTitle : '结算周期'}}</text>
+        <text class="fa fa-angle-down filter-arrow"></text>
+    </view>
+    <view class="filter-item {{!isSex ? 'filter-item-active' : ''}}" bindtap="toSelectSex">
+        <text>{{sexTitle ? sexTitle : '性别要求'}}</text>
+        <text class="fa fa-angle-down filter-arrow"></text>
+    </view>
+    <view class="filter-item {{!isSort ? 'filter-item-active' : ''}}" bindtap="toSelectSort">
+        <text>{{sortTitle ? sortTitle : '智能排序'}}</text>
+        <text class="fa fa-angle-down filter-arrow"></text>
+    </view>
+</view>
+
+<!-- 区域下拉 -->
+<view class="filter-dropdown" hidden="{{isArea}}">
+    <view class="filter-dropdown-item {{areaid == 0 ? 'filter-dropdown-item-active' : ''}}" bindtap='SelectAreaItem' data-title="全部" data-id="0">
+        <text>全部</text>
+        <text class="fa fa-check" wx:if="{{areaid == 0}}"></text>
+    </view>
+    <view wx:for="{{arealist}}" wx:key="id" class="filter-dropdown-item {{areaid == item.id ? 'filter-dropdown-item-active' : ''}}" bindtap='SelectAreaItem' data-title="{{item.name}}" data-id="{{item.id}}">
+        <text>{{item.name}}</text>
+        <text class="fa fa-check" wx:if="{{areaid == item.id}}"></text>
+    </view>
+</view>
+
+<!-- 分类下拉 -->
+<view class="filter-dropdown filter-dropdown-grid" hidden="{{isCateNew}}">
+    <view class="filter-grid-item {{cateKeyword == '' ? 'filter-grid-item-active' : ''}}" bindtap='SelectCateNewItem' data-name="">全部</view>
+    <view wx:for="{{categoryList}}" wx:key="name" class="filter-grid-item {{cateKeyword == item.name ? 'filter-grid-item-active' : ''}}" bindtap='SelectCateNewItem' data-name="{{item.name}}">{{item.name}}</view>
+</view>
+
+<!-- 结算周期下拉 -->
+<view class="filter-dropdown filter-dropdown-grid" hidden="{{isSettle}}">
+    <view class="filter-grid-item {{settleType == 0 ? 'filter-grid-item-active' : ''}}" bindtap='SelectSettleItem' data-id="0" data-title="结算周期">全部</view>
+    <view class="filter-grid-item {{settleType == 1 ? 'filter-grid-item-active' : ''}}" bindtap='SelectSettleItem' data-id="1" data-title="日结">日结</view>
+    <view class="filter-grid-item {{settleType == 3 ? 'filter-grid-item-active' : ''}}" bindtap='SelectSettleItem' data-id="3" data-title="月结">月结</view>
+    <view class="filter-grid-item {{settleType == 99 ? 'filter-grid-item-active' : ''}}" bindtap='SelectSettleItem' data-id="99" data-title="其他">其他</view>
+</view>
+
+<!-- 性别要求下拉 -->
+<view class="filter-dropdown filter-dropdown-grid" hidden="{{isSex}}">
+    <view class="filter-grid-item {{sexFilter == -1 ? 'filter-grid-item-active' : ''}}" bindtap='SelectSexItem' data-id="-1" data-title="性别要求">全部</view>
+    <view class="filter-grid-item {{sexFilter == 1 ? 'filter-grid-item-active' : ''}}" bindtap='SelectSexItem' data-id="1" data-title="限男">男</view>
+    <view class="filter-grid-item {{sexFilter == 2 ? 'filter-grid-item-active' : ''}}" bindtap='SelectSexItem' data-id="2" data-title="限女">女</view>
+    <view class="filter-grid-item {{sexFilter == 0 ? 'filter-grid-item-active' : ''}}" bindtap='SelectSexItem' data-id="0" data-title="性别不限">性别不限</view>
+</view>
+
+<!-- 智能排序下拉 -->
+<view class="filter-dropdown filter-dropdown-grid" hidden="{{isSort}}">
+    <view class="filter-grid-item {{sortType == 'new' ? 'filter-grid-item-active' : ''}}" bindtap='SelectSortItem' data-id="new" data-title="最新排序">最新排序</view>
+    <view class="filter-grid-item {{sortType == 'money' ? 'filter-grid-item-active' : ''}}" bindtap='SelectSortItem' data-id="money" data-title="外快最多">外快最多</view>
+</view>
+
+<!-- 遮罩层 -->
+<view class="filter-overlay" hidden="{{isArea && isCateNew && isSettle && isSex && isSort}}" bindtap="closeAllDropdown"></view>
+
+<!-- 岗位卡片列表 -->
+<view class="job-list">
+    <view class="job-card" wx:for="{{joblist}}" wx:key="id" bindtap="toJobDetail" data-id="{{item.id}}">
+        <!-- 第1行：岗位名称 + 置顶 -->
+        <view class="job-card-row1">
+            <view class="job-card-title">{{item.jobtitle}}</view>
+            <view class="job-card-top" wx:if="{{item.is_top == 1}}">置顶</view>
+        </view>
+        <!-- 第2行：时间段 -->
+        <view class="job-card-row2">
+            <text class="fa fa-calendar-o"></text> {{item.createtime}} - {{item.endtime ? item.endtime : '长期有效'}}
+        </view>
+        <!-- 第3行：标签 -->
+        <view class="job-card-row3">
+            <text class="job-tag" wx:if="{{item.settle_type == 1}}">日结</text>
+            <text class="job-tag" wx:elif="{{item.settle_type == 2}}">周结</text>
+            <text class="job-tag" wx:elif="{{item.settle_type == 3}}">月结</text>
+            <text class="job-tag" wx:elif="{{item.settle_type == 4}}">完工结</text>
+            <text class="job-tag" wx:else>面议</text>
+            <text class="job-tag">{{item.jobcatename ? item.jobcatename : '综合'}}</text>
+            <text class="job-tag" wx:if="{{item.sex == 1}}">限男</text>
+            <text class="job-tag" wx:elif="{{item.sex == 2}}">限女</text>
+            <text class="job-tag" wx:else>男女不限</text>
+            <text class="job-tag" wx:if="{{item.speciallist[0]}}">{{item.speciallist[0]}}</text>
+            <text class="job-tag" wx:if="{{item.speciallist[1]}}">{{item.speciallist[1]}}</text>
+        </view>
+        <!-- 第4行：工价 + 人数 -->
+        <view class="job-card-row4">
+            <view class="job-card-price">
+                <block wx:if="{{item.money == 0 || item.money == '面议'}}">面议</block>
+                <block wx:else>{{item.money}}</block>
+            </view>
+            <view class="job-card-num">需{{item.num}}人</view>
+        </view>
+        <!-- 第5行：地点 + 报名 -->
+        <view class="job-card-row5">
+            <view class="job-card-addr">
+                <text class="fa fa-map-marker"></text> {{item.areaname ? item.areaname : item.companyname}}
+            </view>
+            <view class="job-card-apply" catchtap="toApplyJob" data-id="{{item.id}}">{{userRole == 2 ? '查看' : '报名'}}</view>
+        </view>
+    </view>
+</view>
+
+<!-- 加载更多 -->
+<view class="loadmore">
+    <text>{{loadMore}}</text>
+</view>
+
+</view>
+
+<!-- 底部导航 -->
+<view class="cu-bar tabbar foot bg-white">
+    <view class="action text-gray" bindtap="toIndex">
+        <view class="cuIcon-homefill"></view> 首页
+    </view>
+    <view class="action text-blue" bindtap="toFindjob">
+        <view class="cuIcon-similar"></view> {{checkFlag == 1 ? '找工作' : '找活'}}
+    </view>
+    <view class="action text-gray add-action" bindtap="toMyinvate">
+        <button class="cu-btn cuIcon-add bg-red shadow"></button>
+        发布
+    </view>
+    <view class="action text-gray" bindtap="toSysmsg">
+        <view class="cuIcon-notice"></view>
+        {{checkFlag == 1 ? '消息中心' : '消息'}}
+    </view>
+    <view class="action text-gray" bindtap="toMyuser">
+        <view class="cuIcon-my"></view>
+        我的
+    </view>
+</view>

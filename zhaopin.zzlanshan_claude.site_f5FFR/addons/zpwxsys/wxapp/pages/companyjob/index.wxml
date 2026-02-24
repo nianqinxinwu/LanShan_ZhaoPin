@@ -1,0 +1,85 @@
+<view class="container">
+
+<view class="filter-tabs">
+  <view class="tab {{currentTab == -1 ? 'active' : ''}}" bindtap="switchTab" data-status="-1">全部</view>
+  <view class="tab {{currentTab == 0 ? 'active' : ''}}" bindtap="switchTab" data-status="0">审核中</view>
+  <view class="tab {{currentTab == 1 ? 'active' : ''}}" bindtap="switchTab" data-status="1">已发布</view>
+  <view class="tab {{currentTab == 2 ? 'active' : ''}}" bindtap="switchTab" data-status="2">已下架</view>
+</view>
+
+
+<view wx:if="{{list.length>0}}" class="orderlist" wx:for-items="{{list}}">
+
+  <view class="job-card">
+
+    <!-- 第一行：岗位名称 + 状态标签 + 置顶/加急按钮 -->
+    <view class="card-header">
+      <view class="card-title" bindtap='editCompanyjob' data-id="{{item.id}}">{{item.jobtitle}}</view>
+      <view class="card-top-btns">
+        <view class="btn-top-small" bindtap='topPaytopjob' data-id="{{item.id}}">置顶</view>
+        <view class="btn-spread-small" bindtap='toSpreadJob' data-id="{{item.id}}">加急扩散</view>
+      </view>
+    </view>
+
+    <!-- 第二行：工作时间段 -->
+    <view class="card-time" wx:if="{{item.work_start_date}}">
+      {{item.work_start_date}} - {{item.work_end_date}}  {{item.work_start_time}} - {{item.work_end_time}}
+    </view>
+
+    <!-- 第三行：行业 · 结算类型 · 性别要求 -->
+    <view class="card-tags">
+      <text>{{item.jobcatename}}</text>
+      <text class="tag-dot"> · </text>
+      <text>{{item.settle_type_text}}</text>
+      <text class="tag-dot"> · </text>
+      <text>{{item.sex_text}}</text>
+    </view>
+
+    <!-- 第四行：工价 + 报名人数 -->
+    <view class="card-salary-row">
+      <view class="card-salary" wx:if="{{item.hourly_rate}}">工价 {{item.hourly_rate}}元/小时</view>
+      <view class="card-salary" wx:else>薪资 {{item.money}}</view>
+      <view class="card-applicants">报名{{item.notecount}}人/需要{{item.num}}人</view>
+    </view>
+
+    <!-- 第五行：工作地点 -->
+    <view class="card-location" wx:if="{{item.job_address}}">
+      <text class="location-icon">📍</text> {{item.job_address}}
+    </view>
+    <view class="card-location" wx:elif="{{item.address}}">
+      <text class="location-icon">📍</text> {{item.address}}
+    </view>
+
+    <!-- 底部按钮行 -->
+    <view class="card-bottom-btns">
+      <view class="bottom-btn btn-primary" bindtap='toSelectNote' data-id="{{item.id}}">筛选报名者</view>
+      <view class="bottom-btn btn-outline" bindtap='toBuyService' data-id="{{item.id}}">选择功能服务</view>
+    </view>
+
+  </view>
+</view>
+
+
+<view class="nodata" wx:if="{{list.length == 0}}">
+    <image   src="../../imgs/icon/nodata.png"></image>
+</view>
+
+</view>
+
+
+<view class="weixinmao-float">
+<view class="weixinmao-foot">
+<view class="footer" bindtap='addcompanyjob'>添加招聘职位</view>
+</view>
+</view>
+
+
+<view class='imagePathBox' hidden="{{maskHidden == false}}">
+      <image src="{{imagePath}}" class='shengcheng'></image>
+      <button class='baocun' bindtap='baocun'>保存相册，分享到朋友圈</button>
+    </view>
+    
+   <view hidden="{{maskHidden == false}}" class="mask"></view> 
+  <view class="canvas-box">
+      <canvas  style="width: 375px;height: 667px;position:fixed;top:9999px" canvas-id="mycanvas"/>
+  </view> 

@@ -1,0 +1,136 @@
+<import src="templates/ejoblist.wxml" />
+<import src="templates/oldhouselist.wxml" />
+<view class="container_2">
+
+    <!-- 顶部蓝色背景区域 -->
+    <view class="top-blue-bg">
+        <!-- 顶部广告轮播 -->
+        <view class="banner-container">
+            <!-- 有banner数据时显示轮播 -->
+            <block wx:if="{{bannerlist && bannerlist.length > 0}}">
+                <swiper class="banner-swiper" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" bindchange="swiperChange">
+                    <block wx:for="{{bannerlist}}">
+                        <swiper-item>
+                            <image src="{{item.thumb}}" class="banner-img" mode="aspectFill" bindtap='toPicInnerUrl' data-id='{{item.link}}' data-appid='{{item.appid}}' />
+                        </swiper-item>
+                    </block>
+                </swiper>
+                <view class="banner-dots">
+                    <block wx:for="{{bannerlist}}" wx:key="index">
+                        <view class="banner-dot {{index == swiperCurrent ? 'banner-dot-active' : ''}}"></view>
+                    </block>
+                </view>
+            </block>
+            <!-- 无banner数据时显示占位 -->
+            <view wx:else class="banner-placeholder">
+                <view class="banner-ph-icon">
+                    <text class="cuIcon-picfill"></text>
+                </view>
+                <text class="banner-ph-text">广告位招商中</text>
+            </view>
+        </view>
+
+        <!-- 搜索栏 -->
+        <view class="search-bar">
+            <navigator url="../city/index?id=0" hover-class="none" class="search-city">
+                <text class="fa fa-map-marker"></text> {{city ? city : '全国'}}
+                <text class="fa fa-angle-down"></text>
+            </navigator>
+            <view class="search-input">
+                <icon type="search" size="14" />
+                <input type="text" placeholder="搜索你想要找的任务" value="{{searchKeyword}}"
+                       bindinput="onSearchInput" bindconfirm="doSearch" confirm-type="search"
+                       placeholder-style="color: rgba(255,255,255,0.7);" />
+            </view>
+        </view>
+    </view>
+
+    <!-- 金刚区 15分类 -->
+    <view class="category-grid" hidden="{{ischeck == 1 ? true : false}}">
+        <view class="category-item" wx:for="{{categoryList}}" wx:key="name" bindtap="toCateFindjob" data-name="{{item.name}}">
+            <image src="{{item.icon}}" mode="aspectFit"></image>
+            <text>{{item.name}}</text>
+        </view>
+    </view>
+
+    <!-- 岗位卡片列表 -->
+    <view hidden="{{ischeck == 1 ? true : false}}">
+        <view class="job-card" wx:for="{{joblist}}" wx:key="id" bindtap="toJobDetail" data-id="{{item.id}}">
+            <!-- 第1行：岗位名称 + 置顶 -->
+            <view class="job-card-row1">
+                <view class="job-card-title">{{item.jobtitle}}</view>
+                <view class="job-card-top" wx:if="{{item.is_top == 1}}">置顶</view>
+            </view>
+            <!-- 第2行：时间段 -->
+            <view class="job-card-row2">
+                <text class="fa fa-calendar-o"></text> {{item.createtime}} - {{item.endtime ? item.endtime : '长期有效'}}
+            </view>
+            <!-- 第3行：标签(5个) 结算方式 + 分类 + 性别 + 发布人自定义×2 -->
+            <view class="job-card-row3">
+                <text class="job-tag" wx:if="{{item.settle_type == 1}}">日结</text>
+                <text class="job-tag" wx:elif="{{item.settle_type == 2}}">周结</text>
+                <text class="job-tag" wx:elif="{{item.settle_type == 3}}">月结</text>
+                <text class="job-tag" wx:elif="{{item.settle_type == 4}}">完工结</text>
+                <text class="job-tag" wx:else>面议</text>
+                <text class="job-tag">{{item.jobcatename ? item.jobcatename : '综合'}}</text>
+                <text class="job-tag" wx:if="{{item.sex == 1}}">限男</text>
+                <text class="job-tag" wx:elif="{{item.sex == 2}}">限女</text>
+                <text class="job-tag" wx:else>男女不限</text>
+                <text class="job-tag" wx:if="{{item.speciallist[0]}}">{{item.speciallist[0]}}</text>
+                <text class="job-tag" wx:if="{{item.speciallist[1]}}">{{item.speciallist[1]}}</text>
+            </view>
+            <!-- 第4行：工价 + 人数 -->
+            <view class="job-card-row4">
+                <view class="job-card-price">
+                    <block wx:if="{{item.money == 0 || item.money == '面议'}}">面议</block>
+                    <block wx:else>{{item.money}}</block>
+                </view>
+                <view class="job-card-num">需{{item.num}}人</view>
+            </view>
+            <!-- 第5行：地点 + 报名 -->
+            <view class="job-card-row5">
+                <view class="job-card-addr">
+                    <text class="fa fa-map-marker"></text> {{item.areaname ? item.areaname : item.companyname}}
+                </view>
+                <view class="job-card-apply" catchtap="toApplyJob" data-id="{{item.id}}">{{userRole == 2 ? '查看' : '报名'}}</view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 审核模式列表 -->
+    <view hidden="{{ischeck == 0 ? true : false}}">
+        <template is="oldhouselist" wx:if="{{oldhouselist}}" data="{{oldhouselist}}" />
+    </view>
+
+    <!-- 查看更多 -->
+    <view class="morejob" bindtap="toFindjob" hidden="{{ischeck == 1 ? true : false}}">查看全部岗位 ></view>
+
+    <!-- 底部信息 -->
+    <view class="footerinfo" hidden="{{ischeck == 1 ? true : false}}">
+        <view bindtap="toArticleDetail" data-id="53">隐私政策</view> | <view bindtap="toArticleDetail" data-id="54">入驻指南</view> | <view bindtap="toArticleDetail" data-id="55">用户须知</view>
+    </view>
+
+</view>
+
+
+<!-- 底部导航 -->
+<view class="cu-bar tabbar foot bg-white" hidden="{{ischeck == 1 ? true : false}}">
+    <view class="action text-blue" bindtap="toIndex">
+        <view class="cuIcon-homefill"></view> 首页
+    </view>
+    <view class="action text-gray" bindtap="toFindjob">
+        <view class="cuIcon-similar"></view> 找活
+    </view>
+    <view class="action text-gray add-action" bindtap="toMyinvate">
+        <button class="cu-btn cuIcon-add bg-red shadow"></button>
+        发布
+    </view>
+    <view class="action text-gray" bindtap="toSysmsg">
+        <view class="cuIcon-notice"></view>
+        消息
+    </view>
+    <view class="action text-gray" bindtap="toMyuser">
+        <view class="cuIcon-my"></view>
+        我的
+    </view>
+</view>

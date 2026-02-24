@@ -1,0 +1,45 @@
+<view class="container">
+   <view class="type-container">
+        <scroll-view class="type-navbar" scroll-x="true">
+        
+
+          <view class="type-box">
+                <view id="1" class="type-navbar-item {{ordertype == 1 ? 'type-item-on' : ''}}" bindtap="tabClick" >
+                    一级
+                </view>
+          </view>
+          <view class="type-box">
+                <view id="2" class="type-navbar-item {{ordertype == 2 ? 'type-item-on' : ''}}" bindtap="tabClick" >
+                    二级
+                </view>
+          </view>
+          
+      
+         
+        </scroll-view>
+    </view>
+
+
+      <view class="orderlist" wx:if="{{ordertype == 1}}" wx:for-items="{{agentlevel_one}}">
+        <view class="content">
+            <view class="pic"><image src='{{item.avatarUrl}}'></image></view>
+            <view class="detail">
+                <view class="item">{{item.name}}</view>
+                <view class="item">加入时间:{{item.createtime}}</view>
+            </view>
+           
+        </view>
+      </view>
+
+
+      <view class="orderlist" wx:if="{{ordertype == 2}}" wx:for-items="{{agentlevel_two}}">
+        <view class="content">
+            <view class="pic"><image src='{{item.avatarUrl}}'></image></view>
+            <view class="detail">
+                <view class="item">{{item.name}}</view>
+                <view class="item">加入时间:{{item.createtime}}</view>
+            </view>
+           
+        </view>
+      </view>
+</view>

@@ -1,0 +1,30 @@
+
+ <view class="type-container">
+      <scroll-view class="type-navbar" scroll-x="true">
+          <view class="type-box" wx:for-items="{{catelist}}"  >
+              <view id="{{item.id}}" class="type-navbar-item {{activeCategoryId == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+                  {{item.name}}
+              </view>
+          </view>
+          
+
+      </scroll-view>
+  </view>
+
+
+<view class="container">
+      <view class="news" >
+                <view class="newslist" wx:for-items="{{newslist}}">
+                      <view class="pic" bindtap="toNewsDetail" data-id="{{item.id}}">
+                        <image src="{{item.thumb}}"></image>
+                      </view>
+                      <view class="title" bindtap="toNewsDetail" data-id="{{item.id}}">
+                        <view>{{item.title}}</view>
+                        <view>{{item.createtime}}</view>
+                      </view>
+                </view>
+         
+                
+      </view>
+<!--news end-->
+</view>

@@ -1,0 +1,112 @@
+
+
+
+
+
+<view class="container_2">
+
+
+
+
+<view class="navlist" style="padding-top:30rpx;">
+
+    <view class="lists">
+
+<view class="item {{status == -1 ? 'bred' : 'nobred'}}" bindtap="toEdu" data-id='-1'>全部({{totalcount}})</view>
+<view class="item  {{status == 0 ? 'bred' : 'nobred'}}" bindtap="toEdu" data-id='0'>新派遣({{totalcount_0}})</view>
+<view class="item  {{status == 1 ? 'bred' : 'nobred'}}" bindtap="toEdu" data-id='1'>面试({{totalcount_1}})</view>
+<view class="item  {{status == 2 ? 'bred' : 'nobred'}}" bindtap="toEdu" data-id='2'>录用({{totalcount_2}})</view>
+<view class="item  {{status == 3 ? 'bred' : 'nobred'}}" bindtap="toEdu" data-id='3'>试用({{totalcount_3}})</view>
+<view class="item  {{status == 4 ? 'bred' : 'nobred'}}" bindtap="toEdu" data-id='4'>已入职({{totalcount_4}})</view>
+
+
+</view>
+
+</view>
+
+
+
+<!-- 列表 -->
+<view class="news">
+
+   
+
+    <view class="guestlist" wx:if="{{notelist.length>0}}" wx:for="{{notelist}}">
+
+    
+
+        <view class="newslist" >
+                            <view class="title" bindtap="toNotedetail"  data-id="{{item.noteid}}">
+                                     
+
+                                       <view class="detail">
+                                       
+                                           <view class="info">
+                                            <view>{{item.name}} </view>
+                                            <view> {{item.sex == 1 ? '男' : '女'}} / {{item.age}}岁 / {{item.education}} / {{item.express}} </view>
+                                            <view class="jobmoney">关联任务: <text> {{item.tasktitle}}</text></view>
+                                            </view>
+
+                                            <view class="pic">
+                                           <image src="{{item.avatarUrl}}"></image>
+
+                                        
+
+                                           <text class="time">{{item.refreshtime}}</text>
+
+                                           <image src="../../imgs/icon/{{item.sex == 1 ? 'man' : 'sex'}}.png" class="footimg" style="width:30rpx;height:30rpx;"></image>
+
+                                           </view>
+
+                                        
+
+                                      </view>
+                            </view>
+                </view>
+
+
+
+        <view class="usertel"  >向【{{item.companyname}}】职位【{{item.jobtitle}}】派遣</view>
+
+     
+
+        <view class="useraddress"><view>{{item.content}}</view><view >佣金￥ {{item.money}}</view></view>
+
+
+
+
+
+        <view class="useroper"><view>状态:{{item.status}}</view> 
+        
+        <view bindtap="toWorkerDetail" data-id="{{item.noteid}}">查看求职者</view>
+        <view bindtap="toGuestDetail" data-id="{{item.id}}">查看进度</view>
+        </view>
+    </view>
+
+
+
+
+    <view class="nodata" wx:if="{{notelist.length == 0}}">
+        <image   src="../../imgs/icon/nodata.png"></image>
+    </view>  
+
+
+
+
+
+
+
+              </view>
+
+
+</view>
+
+
+
+<!-- 加载更多 -->
+<view class="loadmore">
+	<text>{{loadMore}}</text>
+</view>
+
+
+

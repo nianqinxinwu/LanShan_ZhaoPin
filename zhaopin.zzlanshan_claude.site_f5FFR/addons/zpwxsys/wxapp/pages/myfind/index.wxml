@@ -1,0 +1,81 @@
+
+<view class="container">
+
+  <view class="filter-tabs">
+    <view class="tab {{currentTab == -1 ? 'active' : ''}}" bindtap="switchTab" data-status="-1">全部</view>
+    <view class="tab {{currentTab == 1 ? 'active' : ''}}" bindtap="switchTab" data-status="1">已选中</view>
+    <view class="tab {{currentTab == 0 ? 'active' : ''}}" bindtap="switchTab" data-status="0">发布中</view>
+    <view class="tab {{currentTab == 3 ? 'active' : ''}}" bindtap="switchTab" data-status="3">已过期</view>
+  </view>
+
+  <view wx:if="{{list.length > 0}}" class="card-list">
+    <view class="job-card" wx:for="{{list}}" wx:key="index">
+      <!-- 第一行：岗位名称 + 状态标签 -->
+      <view class="card-header">
+        <text class="card-title" bindtap="toJob" data-id="{{item.jobid}}">{{item.jobtitle}}</text>
+        <text class="card-status status-{{item.status_type}}">{{item.status_str}}</text>
+      </view>
+
+      <!-- 第二行：工作时间段 -->
+      <view class="card-row" wx:if="{{item.work_period}}">
+        <text class="card-info-text">{{item.work_period}}</text>
+      </view>
+
+      <!-- 第三行：行业 · 结算类型 · 性别需求 -->
+      <view class="card-row">
+        <text class="card-info-text">{{item.jobcatename || '未分类'}} · {{item.settle_type_str}} · {{item.sex_str}}</text>
+      </view>
+
+      <!-- 第四行：工价 + 需要人数 -->
+      <view class="card-row card-row-between">
+        <text class="card-price">{{item.money}}</text>
+        <text class="card-num">需要{{item.num}}人</text>
+      </view>
+
+      <!-- 第五行：工作地点 -->
+      <view class="card-row" wx:if="{{item.job_address}}">
+        <text class="card-address">{{item.job_address}}</text>
+      </view>
+      <view class="card-row" wx:elif="{{item.address}}">
+        <text class="card-address">{{item.address}}</text>
+      </view>
+
+      <!-- 按钮栏：三个按钮始终渲染 -->
+      <view class="card-actions">
+        <!-- 工作确认 -->
+        <view
+          class="action-btn btn-confirm {{item.status >= 4 ? 'btn-done' : (item.signin_phase >= 1 && item.status < 4 ? '' : 'btn-disabled')}}"
+          bindtap="doConfirmWork"
+          data-id="{{item.id}}"
+          data-idx="{{index}}"
+        >{{item.status >= 4 ? '已确认' : '工作确认'}}</view>
+
+        <!-- 我要签到 -->
+        <view
+          class="action-btn btn-signin {{item.signed_in == 1 ? 'btn-done' : (item.signin_phase >= 2 && item.status == 4 && item.signed_in != 1 ? '' : 'btn-disabled')}}"
+          bindtap="doSignIn"
+          data-id="{{item.id}}"
+          data-idx="{{index}}"
+        >{{item.signed_in == 1 ? '已签到' : '我要签到'}}</view>
+
+        <!-- 我要签退 -->
+        <view
+          class="action-btn btn-signout {{item.status >= 5 ? 'btn-done' : (item.signin_phase >= 3 && item.status == 4 && item.signed_in == 1 ? '' : 'btn-disabled')}}"
+          bindtap="doSignOut"
+          data-id="{{item.id}}"
+          data-idx="{{index}}"
+        >{{item.status >= 5 ? '已签退' : '我要签退'}}</view>
+      </view>
+
+      <!-- 评价入口 -->
+      <view class="card-actions" wx:if="{{item.status == 5}}">
+        <view class="action-btn btn-eval" bindtap="toSetComment" data-id="{{item.id}}">去评价</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="nodata" wx:if="{{list.length == 0}}">
+    <image src="../../imgs/icon/nodata.png"></image>
+  </view>
+
+</view>

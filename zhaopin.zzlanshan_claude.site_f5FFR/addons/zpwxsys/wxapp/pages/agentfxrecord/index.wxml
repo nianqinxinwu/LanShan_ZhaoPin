@@ -1,0 +1,44 @@
+<view class="container_2">
+<view class="news">
+          <view class="newslist" wx:if="{{userlist.length>0}}" wx:for="{{userlist}}">
+                            <view class="title" bindtap="toWorkerDetail"  data-id="{{item.id}}">
+                                     
+
+                                       <view class="detail">
+                                       
+                                           <view class="info">
+                                            <view>{{item.nickname}} </view>
+                                            <view>  </view>
+                                            <view class="jobmoney">状态: <text> {{item.status}}</text></view>
+                                            </view>
+
+                                            <view class="pic">
+                                           <image src="{{item.avatarUrl}}"></image>
+
+                                        
+
+                                           <text class="time">{{item.create_time}}</text>
+
+                                          
+
+                                           </view>
+
+                                        
+
+                                      </view>
+                            </view>
+                </view>
+
+
+
+
+        <view class="nodata" wx:if="{{userlist.length == 0}}">
+            <image   src="../../imgs/icon/nodata.png"></image>
+        </view>  
+
+
+</view>
+
+
+
+</view>

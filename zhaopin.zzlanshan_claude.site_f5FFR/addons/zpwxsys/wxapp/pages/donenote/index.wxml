@@ -1,0 +1,328 @@
+<view class="container" >
+
+
+
+
+
+    <view class="proline" >
+
+<view class="cu-steps">
+
+
+
+  <view class="cu-item {{guestinfo.pstatus>0 ? 'text-blue' :'' }} " >
+    <text class="num " data-index="0"></text> 面试
+  </view>
+  
+
+  <view class="cu-item {{guestinfo.pstatus>2 ? 'text-blue' :'' }}  " >
+    <text class="num " data-index="1"></text> 录用
+  </view>
+
+  <view class="cu-item {{guestinfo.pstatus>3 ? 'text-blue' :'' }}  " >
+    <text class="num " data-index="2"></text> 试用
+  </view>
+
+
+  <view class="cu-item {{guestinfo.pstatus>4 ? 'text-blue' :'' }}  " >
+    <text class="num " data-index="3"></text> 入职
+  </view>
+
+
+
+  
+
+
+</view>
+
+
+
+
+</view>
+
+
+
+<view class="jobdetail">
+    <view class="jobtitle" style="padding-left:20rpx;">报备流水</view>
+</view>
+
+<view class="cu-timeline"   wx:for="{{proguestlist}}" >
+<view class="cu-time">{{item.createtime}}</view>
+<view class="cu-item">
+  <view class="content">
+    <text>{{item.title}}
+      {{item.content}}</text>
+  </view>
+</view>
+</view>
+
+<form bindsubmit="toAgreeorder" report-submit wx:if="{{guestinfo.status == 0 }}">
+
+
+<view class="main">
+    <view class="title">
+      求职进度
+    </view>
+    <view class="list">
+
+
+      <view class="item">
+        
+        <view class="selectitem" >
+          <radio-group class="radio-group" bindchange="radioAgreeChange">
+  <label class="radio">
+    <radio value="1" checked=""/> 同意面试
+  </label>
+    <label class="radio">
+    <radio value="-1" checked=""/> 拒绝面试
+  </label>
+
+
+</radio-group>
+
+</view>
+          </view>
+        <view class="item">
+    
+     <view class="selectitem" >
+     <textarea name="content" placeholder="填写备注说明" value="" maxlength="-1"  />
+     
+     </view>
+
+        </view>
+      
+        
+    </view>
+
+
+</view>
+
+
+
+<view class="weixinmao-float"  style="margin-bottom:30rpx;">
+<view class="weixinmao-foot">
+  <button class="footer" formType="submit" >提交进度</button>
+</view>
+
+
+</view>
+
+</form>
+
+<form bindsubmit="toPassorder" report-submit wx:if="{{guestinfo.status == 1 }}">
+
+
+<view class="main">
+    <view class="title">
+    求职进度
+    </view>
+    <view class="list">
+
+
+      <view class="item">
+        
+        <view class="selectitem" >
+          <radio-group class="radio-group" bindchange="radioAgreeChange">
+  <label class="radio">
+    <radio value="2" checked=""/> 面试成功
+  </label>
+    <label class="radio">
+    <radio value="-2" checked=""/> 面试失败
+  </label>
+
+
+</radio-group>
+
+</view>
+          </view>
+        <view class="item">
+    
+     <view class="selectitem" >
+     <textarea name="content" placeholder="填写备注说明" value="" maxlength="-1"  />
+     
+     </view>
+
+        </view>
+      
+        
+    </view>
+
+
+</view>
+
+
+
+<view class="weixinmao-float"  style="margin-bottom:30rpx;">
+<view class="weixinmao-foot">
+  <button class="footer" formType="submit" >提交进度</button>
+</view>
+
+
+</view>
+
+</form>
+
+
+<form bindsubmit="toTypeinorder" report-submit wx:if="{{guestinfo.status == 2 }}">
+
+
+<view class="main">
+    <view class="title">
+    求职进度
+    </view>
+    <view class="list">
+
+
+      <view class="item">
+        
+        <view class="selectitem" >
+          <radio-group class="radio-group" bindchange="radioAgreeChange">
+  <label class="radio">
+    <radio value="3" checked=""/> 录用成功
+  </label>
+    <label class="radio">
+    <radio value="-3" checked=""/> 录用失败
+  </label>
+
+
+</radio-group>
+
+</view>
+          </view>
+        <view class="item">
+    
+     <view class="selectitem" >
+     <textarea name="content" placeholder="填写备注说明" value="" maxlength="-1"  />
+     
+     </view>
+
+        </view>
+      
+        
+    </view>
+
+
+</view>
+
+
+
+<view class="weixinmao-float"  style="margin-bottom:30rpx;">
+<view class="weixinmao-foot">
+  <button class="footer" formType="submit" >提交进度</button>
+</view>
+
+
+</view>
+
+</form>
+
+<form bindsubmit="toTryorder" report-submit wx:if="{{guestinfo.status == 3 }}">
+
+
+<view class="main">
+    <view class="title">
+    求职进度
+    </view>
+    <view class="list">
+
+
+      <view class="item">
+        
+        <view class="selectitem" >
+          <radio-group class="radio-group" bindchange="radioAgreeChange">
+  <label class="radio">
+    <radio value="4" checked=""/> 试用成功
+  </label>
+    <label class="radio">
+    <radio value="-4" checked=""/> 试用失败
+  </label>
+
+
+</radio-group>
+
+</view>
+          </view>
+        <view class="item">
+    
+     <view class="selectitem" >
+     <textarea name="content" placeholder="填写备注说明" value="" maxlength="-1"  />
+     
+     </view>
+
+        </view>
+      
+        
+    </view>
+
+
+</view>
+
+
+
+<view class="weixinmao-float"  style="margin-bottom:30rpx;">
+<view class="weixinmao-foot">
+  <button class="footer" formType="submit" >提交进度</button>
+</view>
+
+
+</view>
+
+</form>
+
+
+<form bindsubmit="toDoneorder" report-submit wx:if="{{guestinfo.status == 4 }}">
+
+
+<view class="main">
+    <view class="title">
+    求职进度
+    </view>
+    <view class="list">
+
+
+      <view class="item">
+        
+        <view class="selectitem" >
+          <radio-group class="radio-group" bindchange="radioAgreeChange">
+  <label class="radio">
+    <radio value="5" checked=""/> 完成正式入职
+  </label>
+    <label class="radio">
+    <radio value="-5" checked=""/> 入职失败
+  </label>
+
+
+</radio-group>
+
+</view>
+          </view>
+        <view class="item">
+    
+     <view class="selectitem" >
+     <textarea name="content" placeholder="填写备注说明" value="" maxlength="-1"  />
+     
+     </view>
+
+        </view>
+      
+        
+    </view>
+
+
+</view>
+
+
+
+<view class="weixinmao-float"  style="margin-bottom:30rpx;">
+<view class="weixinmao-foot">
+  <button class="footer" formType="submit" >提交进度</button>
+</view>
+
+
+</view>
+
+</form>
+
+
+
+</view>

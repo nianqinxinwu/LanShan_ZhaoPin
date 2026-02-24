@@ -1,0 +1,303 @@
+page {
+  background: #f5f5f5;
+}
+
+.container {
+  background-color: #f5f5f5;
+  min-height: 100%;
+  padding-bottom: 250rpx;
+}
+
+/* ===== 顶部蓝色背景 ===== */
+.top-blue-bg {
+  background: #2577f5;
+  padding-bottom: 50rpx;
+}
+
+/* ===== 顶部用户区 ===== */
+.user-header {
+  background: transparent;
+  padding: 40rpx 30rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.avatar-wrap {
+  flex-shrink: 0;
+  margin-right: 24rpx;
+}
+
+.avatar-img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 4rpx solid rgba(255, 255, 255, 0.4);
+}
+
+.user-info-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.nickname {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10rpx;
+}
+
+.verify-tag {
+  display: inline-block;
+  font-size: 22rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+  align-self: flex-start;
+}
+
+.verify-tag.verified {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.verify-tag.unverified {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* 报名者 - 评分 */
+.user-rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 8rpx;
+}
+
+.rating-stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.star-icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 4rpx;
+}
+
+.rating-score {
+  font-size: 24rpx;
+  color: #ffe082;
+  margin-left: 8rpx;
+  font-weight: bold;
+}
+
+.user-meta-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.resume-entry {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 10rpx;
+}
+
+.login-days {
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 16rpx;
+}
+
+/* ===== 资产栏 ===== */
+.asset-bar {
+  background: rgba(255, 255, 255, 0.15);
+  margin: 0 30rpx;
+  padding: 24rpx 30rpx;
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.asset-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.asset-icon {
+  width: 52rpx;
+  height: 52rpx;
+  margin-right: 12rpx;
+}
+
+.asset-label {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.8);
+  margin-right: 8rpx;
+}
+
+.asset-value {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ff9003;
+}
+
+.asset-unit {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 4rpx;
+}
+
+.asset-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.asset-btn {
+  font-size: 26rpx;
+  padding: 10rpx 28rpx;
+  border-radius: 30rpx;
+  background: #fff;
+  color: #2577f5;
+  margin-left: 16rpx;
+}
+
+.asset-btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1rpx solid rgba(255, 255, 255, 0.6);
+}
+
+/* ===== 功能网格（金刚区） ===== */
+.func-grid {
+  background: #fff;
+  margin: -30rpx 30rpx 0;
+  padding: 30rpx 0 10rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 30rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 5;
+}
+
+.func-item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.func-item image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 10rpx;
+}
+
+.func-item text {
+  font-size: 24rpx;
+  color: #333;
+}
+
+/* ===== 间隔 ===== */
+.section-gap {
+  height: 20rpx;
+}
+
+/* ===== 菜单列表 ===== */
+.menu-list {
+  background: #fff;
+  margin: 0 30rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 28rpx 30rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-icon {
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.menu-text {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.menu-arrow {
+  width: 28rpx;
+  height: 28rpx;
+  flex-shrink: 0;
+}
+
+/* 联系客服按钮（嵌在 menu-item 中） */
+.menu-contact-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  font-size: 28rpx;
+  color: #333;
+  line-height: normal;
+  text-align: left;
+}
+
+.menu-contact-btn::after {
+  border: none;
+}
+
+/* ===== 退出登录 ===== */
+.logout-section {
+  padding: 30rpx;
+}
+
+.logout-btn {
+  background: #fff;
+  color: #e53935;
+  font-size: 30rpx;
+  text-align: center;
+  padding: 24rpx 0;
+  border-radius: 12rpx;
+}
+
+/* ===== 消息提示角标 ===== */
+.tipmsg {
+  background: red;
+  color: #fff;
+  width: 35rpx;
+  height: 35rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -12rpx;
+  left: 80rpx;
+  z-index: 1000;
+  font-size: .7rem;
+}

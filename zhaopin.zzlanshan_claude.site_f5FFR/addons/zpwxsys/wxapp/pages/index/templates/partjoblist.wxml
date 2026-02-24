@@ -1,0 +1,75 @@
+<template name="partjoblist">
+    
+    <view class="joblist_2" wx:for="{{joblist}}">
+                              <view class="title_2" bindtap="toJobDetail" data-id="{{item.id}}">
+  
+                                <view class="jobinfo_2">
+  
+                                      <view class="jobinfoleft_2">
+                                                      <view class="address_2">
+                                                              <view class="jobname_2">{{item.jobtitle}} </view>  
+  
+                                                              <view  class="moneyinfo_2"><block  wx:if="{{item.money == 0}}">面议</block><block  wx:else>{{item.money}}</block></view>
+                                                                  <view class='vprice2' ></view>
+                                                             
+                                                      </view>
+  
+                                                      <view class="joblable_2">
+                                                          
+                                                          {{item.areaname}} | {{item.education}} 
+                                                      </view>
+  
+                                                      <view class="special_2">
+                                                   
+                                                                  <view class="items_2" wx:for="{{item.speciallist}}" wx:for-item="itemSpecial">{{itemSpecial}}</view>
+                                                 
+                                                       <!--
+                                                    <view class="items_2" >月休</view> 
+                                                    <view class="items_2" >免费培训</view>
+                                                    <view class="items_2" >晋升空间</view>
+                                                    <view class="items_2" >综合补贴</view>
+                                                       -->
+                                                      </view>
+   
+                                        </view>
+  
+                                        <view class="jobinforight_2">
+  
+                                                      <view   class="fxmoney_2"  wx:if='{{item.vprice > 0}}'>                                                
+                                                              <view style="width:200rpx;color:#fff;">推荐奖300元/人</view>
+                                                              <view>入职奖100元/人</view>  
+                                                      </view>
+  
+                                        </view>
+  
+  
+                              
+                              </view>
+  
+  
+  
+  
+                                         <view class="detail_2">
+                                            
+                                             <view class="info_2">
+                                            
+                                                    <view class="companyinfo_2" style="font-size:.9rem;"> 
+                                                        {{item.companyname}}     
+                                                       
+                                                    </view>
+                                                    <view class="jobmoney_2">
+                                                          
+                                                          <view class="time_2">{{item.updatetime}}</view>
+                                                                                                                 
+  
+                                                     </view>
+                                              </view>
+                                        </view>
+                              </view>
+                  </view>
+  
+  
+     
+  
+  
+  </template>

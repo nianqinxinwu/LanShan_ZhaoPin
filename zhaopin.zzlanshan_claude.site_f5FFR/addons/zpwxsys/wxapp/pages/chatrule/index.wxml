@@ -1,0 +1,21 @@
+<view class="container">
+
+  <view class="welcome-section">
+    <view class="welcome-icon">
+      <view class="welcome-icon-inner"></view>
+    </view>
+    <view class="welcome-title">群聊公约</view>
+    <view class="welcome-desc">加入群聊前，请阅读并同意以下公约</view>
+  </view>
+
+  <view class="rule-card">
+    <view class="rule-card-title">{{rule.title}}</view>
+    <view class="rule-card-body">{{rule.content}}</view>
+  </view>
+
+  <view class="agree-section">
+    <view class="agree-hint" wx:if="{{!canAgree}}">请滑动阅读完全部内容</view>
+    <button class="agree-btn {{canAgree ? 'active' : ''}}" disabled="{{!canAgree}}" bindtap="onAgree">我已阅读并同意公约</button>
+  </view>
+
+</view>

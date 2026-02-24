@@ -1,0 +1,250 @@
+page{
+  background: #fff;
+
+}
+
+.levellist{
+  width:750rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: center;
+  padding-top: 10rpx;
+  background: #fff;
+
+
+}
+.levellist .levelmain{
+
+  width:720rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+.levellist .levelitem{
+
+  width:220rpx;
+  height:260rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid yellow;
+  display: flex;
+  flex-direction: column;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+
+}
+.levellist .levelitem view:nth-child(1){
+
+  width:220rpx;
+  height: 80rpx;
+  background: #fbd74d;
+  color: #734500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+}
+
+.levellist .levelitem view:nth-child(2){
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #734500;
+  width:220rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.levellist .levelitem view:nth-child(3){
+
+  font-size: .7rem;
+    color: #734500;
+    width:220rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+
+.levellist .levelitem view:nth-child(4){
+
+  font-size: .7rem;
+    color: #734500;
+    width:220rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+.levellist .levelitem view:nth-child(5){
+
+  font-size: .7rem;
+  color: #734500;
+  width:220rpx;
+height: 100rpx;
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+}
+
+.levellist .levelitem view:nth-child(6){
+
+  font-size: .7rem;
+    color: red;
+    width:220rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+.selected{
+
+  background: #fdf1db;
+
+}
+
+/*充值金额分类*/
+.balance-demo {
+  padding: 40rpx 0 30rpx 0;
+
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  width:750rpx;
+
+
+}
+
+.userlevel{
+
+  width:300rpx;
+  height: 50rpx;
+  background: yellow;
+  font-size:.8rem;
+}
+
+.balance-demo button {
+  display: inline-block;
+  width: 300rpx;
+  height: 320rpx;
+  margin: 10rpx 35rpx;
+  background-color: transparent;
+  border: 1rpx solid yellow;
+}
+.balance-demo button[data-id="5"] {
+  padding-top: 30rpx;
+}
+.balance-demo button.selected {
+  background-color: yellow;
+  color: #fff;
+}
+.balance-demo button text {
+  display: block;
+  line-height: 60rpx;
+}
+.balance-demo button .botton {
+  color: #808080;
+}
+.balance-demo button text.selected {
+  color: #fff;
+}
+.other-button-hover {
+  background-color: yellow;
+}
+/*<!--去充值模块-->*/
+.goblance {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 80rpx;
+  padding: 0 30rpx 0 30rpx;
+  background-color: #fff;
+  text-align: center;
+}
+
+
+.goblance .txt_t {
+  color: #808080;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.goblance navigator {
+  display: inline-block;
+  color: #0033FF;
+}
+.goblance button[disabled="false"] {
+  color: #fff;
+}
+.goblance button {
+  color: #734500;
+  margin: 20rpx 15rpx;
+  background-color: #fbd74d;
+font-size: .8rem;
+width:500rpx;
+height: 100rpx;
+line-height: 100rpx;
+border: 0rpx solid #fbd74d;
+}
+
+.scorelist{
+
+  width:750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.scorelist .title{
+
+  width:720rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: .7rem;
+  border-bottom: 1rpx dotted #808080;
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
+  
+  
+}
+.scorelist .title view{
+
+  width:20%;
+  text-align: center;
+  font-weight: 600;
+}
+
+
+.scorelist .list{
+
+  width:720rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: .7rem;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+    border-bottom: 1rpx dotted #808080;
+
+}
+.scorelist .list view{
+
+  width:20%;
+  text-align: center;
+}

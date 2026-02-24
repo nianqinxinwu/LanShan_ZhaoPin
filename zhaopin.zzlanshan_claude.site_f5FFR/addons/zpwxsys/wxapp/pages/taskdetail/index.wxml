@@ -1,0 +1,88 @@
+
+<import src="../../resource/wxParse/wxParse.wxml" />
+<view class="container">
+
+  <view class="header">
+       <view class="moneytitle">悬赏红包金额</view>
+       <view class="money">￥{{taskinfo.totalmoney}}</view>
+
+                <view class="role" bindtap="goHousexy">规则说明</view>
+
+       
+  </view>
+  <view class="title">
+        <view class="jobtitle">
+            <view class="jobname">{{taskinfo.title}}</view>
+            <view class="redtitle">推荐人才赚红包</view>
+            <view class="jobdata">
+                  <view class="jobdataleft">
+                        <view>￥{{taskinfo.money}}</view>
+                        <view>推荐1人</view>
+                  </view>
+                  <view class="jobdataright">
+                        <view>{{taskinfo.num}}</view>
+                        <view>招聘人数</view>
+                  
+                  </view>
+            </view>
+
+        </view>
+  </view>
+  
+  <view class="jobinfo">
+
+      <view class="jobtitle">
+          <view>{{jobinfo.jobtitle}}</view>
+          <view>正在招聘</view>
+      </view>
+      <view class="joblabel">
+          <view>{{jobinfo.money}}元/月</view>
+          <view>|</view>
+          <view>{{jobinfo.education}}</view>
+      </view>
+  </view>
+
+
+    <view class="company">
+                  <view class="companyinfo" bindtap='toCompanyDetail' data-id="{{companyinfo.companyid}}">
+
+                      <image src='{{companyinfo.thumb}}'></image>
+                      <view class="companyname">
+                          <view>{{companyinfo.companyname}}</view>
+                          <view>{{companyinfo.companyworker}}| {{companyinfo.companytype}}|{{companyinfo.companycate}} </view>
+                          <view><text class="fa fa-map-marker fa-lg" style='color:#bfbfbf;'></text> {{companyinfo.address}}</view>
+                        </view>
+
+                  </view>
+                
+                  
+          </view>
+
+
+
+
+
+
+
+  <view class="jobdetail">
+      <view class="jobtitle">规则说明</view>
+  </view>
+  <view class="jobcontent">
+      <view class="detail">  
+
+        <rich-text nodes="{{taskinfo.content}}"></rich-text>
+</view>
+  </view>
+
+
+
+
+
+
+</view>
+
+<view class="cu-bar foot bg-white tabbar border shop">
+  
+  <view class="bg-red submit" bindtap="toAgentcenter"  data-id="{{taskinfo.id}}">领取任务</view>
+</view>
+

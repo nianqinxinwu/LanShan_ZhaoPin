@@ -1,0 +1,87 @@
+<form bindsubmit="doSendjob" report-submit>
+
+<!--
+  <scroll-view class="bigWrap" scroll-y="true" scroll-top="{{scrollTop}}"  style="position: absolute; left: 0; top:0; bottom:0; right: 0;">
+-->
+
+<view class="container">
+
+    <view class="main">
+        <view class="title">
+        选择派遣人才信息
+        </view>
+        <view class="list">
+
+
+
+          <view class="item">
+              <view class="name">选择人才</view>
+              <view class="selectitem">
+              
+              
+                 <picker value="{{Index}}"  range="{{notelist}}" range-key="name"  bindchange="bindCompanyChange">  
+    <view class="picker">  
+
+        {{notelist[noteidindex].name ? notelist[noteidindex].name : '选择人才'}}
+    </view>  
+  </picker>
+          
+              
+              
+              
+              </view>
+
+            </view>
+
+
+
+
+          
+
+
+
+   
+
+     
+         </view>
+         </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</view>
+<!--
+</scroll-view>
+-->
+<view class="weixinmao-float" style="margin-top:300rpx;" >
+    <view class="weixinmao-foot">
+      <button class="footer"  formType="submit" >立即提交</button>
+    </view>
+</view>
+   </form>
+
+
+
+
+
+
+
+
+
+   <view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='/images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>正在邀请中...</view>
+</view>

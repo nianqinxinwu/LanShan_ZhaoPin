@@ -1,0 +1,30 @@
+<view class="container">
+
+  <view wx:if="{{grouplist.length > 0}}" wx:for="{{grouplist}}" wx:key="index" class="group-card">
+    <view class="group-card-main" bindtap="toChat" data-id="{{item.id}}">
+      <view class="group-left">
+        <image class="group-logo" src="{{item.logo || '../../imgs/icon/groupchat.png'}}"></image>
+      </view>
+      <view class="group-info">
+        <view class="group-name">{{item.group_name}}</view>
+        <view class="group-meta">
+          <text>{{item.companyname}}</text>
+          <text class="sep">|</text>
+          <text>{{item.member_count}}人</text>
+        </view>
+        <view class="group-time">创建于 {{item.createtime}}</view>
+      </view>
+      <view class="group-arrow">
+        <text>></text>
+      </view>
+    </view>
+    <view class="screen-btn" wx:if="{{item.role >= 1}}"
+          data-jobid="{{item.jobid}}" catchtap="toSelectNote">筛选候选人</view>
+  </view>
+
+  <view class="nodata" wx:if="{{grouplist.length == 0}}">
+    <image src="../../imgs/icon/nodata.png"></image>
+    <view>暂无群聊</view>
+  </view>
+
+</view>

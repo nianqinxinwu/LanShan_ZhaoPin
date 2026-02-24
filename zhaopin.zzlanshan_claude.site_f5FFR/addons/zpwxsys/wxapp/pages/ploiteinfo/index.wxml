@@ -1,0 +1,41 @@
+<view class="container">
+
+  <form bindsubmit="savePloitecar" report-submit>
+  <view class="case">
+                  
+      <view class="casetitle"><view></view><view>举报类型</view></view>
+
+      <view class="caselist">
+        <radio-group bindchange="radioChange">
+        <view class="item">
+          <radio value="0"></radio><text>虚假信息</text>
+        </view>
+
+        <view class="item">
+          <radio value="1"></radio><text>广告</text>
+        </view>
+
+        <view class="item">
+          <radio value="2"></radio><text>其他</text>
+        </view>
+
+      </radio-group>
+
+      </view>
+
+
+      <view class="casetitle"><view></view><view>举报理由</view></view>
+
+      <view class="casecontent">
+        <textarea placeholder="请填举报理由" name="content"></textarea>
+      </view>
+
+      <view class="casebtn">
+      
+        <button  formType="submit">提交</button>
+        
+        </view>
+
+  </view>
+</form>
+</view>

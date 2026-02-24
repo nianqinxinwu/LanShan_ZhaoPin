@@ -1,0 +1,224 @@
+page {
+  background: #f5f5f5;
+}
+
+.container {
+  padding-bottom: 150rpx;
+}
+
+.header {
+  background: #2577f5;
+  padding: 40rpx 30rpx;
+  color: #FFF;
+}
+
+.header .job-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.header .job-sub {
+  font-size: .8rem;
+  margin-top: 10rpx;
+  opacity: 0.8;
+}
+
+.service-list {
+  margin-top: 20rpx;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #FFF;
+  padding: 30rpx;
+  margin-bottom: 2rpx;
+}
+
+.service-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.service-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+
+.service-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-name {
+  font-size: .9rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.service-desc {
+  font-size: .7rem;
+  color: #999;
+  margin-top: 8rpx;
+}
+
+.service-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.service-price {
+  font-size: .8rem;
+  color: #e64340;
+  margin-right: 20rpx;
+}
+
+.service-price-original {
+  font-size: .7rem;
+  color: #bbb;
+  text-decoration: line-through;
+  margin-right: 10rpx;
+}
+
+.service-check {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border: 2rpx solid #ddd;
+}
+
+.service-check.checked {
+  background: #2577f5;
+  border-color: #2577f5;
+}
+
+.account-info {
+  margin: 30rpx;
+  background: #FFF;
+  border-radius: 10rpx;
+  padding: 30rpx;
+}
+
+.account-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15rpx 0;
+  font-size: .8rem;
+  color: #666;
+}
+
+.account-row .num {
+  color: #e64340;
+  font-weight: bold;
+}
+
+.account-row .coin-num {
+  color: #2577f5;
+}
+
+.recharge-link {
+  text-align: right;
+  color: #2577f5;
+  font-size: .8rem;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #f5f5f5;
+  margin-top: 10rpx;
+}
+
+.section-title {
+  padding: 24rpx 30rpx 8rpx;
+  font-size: .8rem;
+  color: #999;
+  font-weight: bold;
+}
+
+.service-price.free {
+  color: #4caf50;
+}
+
+.service-price.coin {
+  color: #2577f5;
+}
+
+.service-price.purchased {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.service-item-disabled {
+  opacity: 0.6;
+}
+
+/* 加急扩散子选项 */
+.spread-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #f9f9f9;
+  padding: 20rpx 30rpx;
+}
+
+.spread-option {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #FFF;
+  border: 2rpx solid #ddd;
+  border-radius: 10rpx;
+  padding: 20rpx 10rpx;
+  margin: 0 10rpx;
+}
+
+.spread-option-active {
+  border-color: #2577f5;
+  background: #eef4ff;
+}
+
+.spread-option-label {
+  font-size: .8rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.spread-option-price {
+  font-size: .75rem;
+  color: #2577f5;
+  margin-top: 8rpx;
+}
+
+.weixinmao-float {
+  height: 150rpx;
+}
+
+.weixinmao-foot {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  padding-top: 10rpx;
+  padding-bottom: 30rpx;
+}
+
+.weixinmao-foot view {
+  color: #FFF;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: .9rem;
+  width: 100%;
+  border-radius: 0rpx;
+  background: #2577f5;
+  text-align: center;
+}

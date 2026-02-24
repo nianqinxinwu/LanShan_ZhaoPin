@@ -1,0 +1,70 @@
+<view class="container">
+
+
+
+  <view class="orderlist" wx:if="{{list.length>0}}" wx:for-items="{{list}}">
+
+
+    <view class="content">
+
+
+
+      <view class="jobinfo">
+        <view class="jobleft">
+          <view> {{item.taskcount}}  </view>
+          <view>领取记录</view>
+        </view>
+        <view class="line">
+        </view>
+
+        <view class="jobright">
+          <view class="jobtitle">
+            <view>{{item.title}}</view>
+          </view>
+          <view>所属职位:{{item.jobtitle}}</view>
+          <view> 入职奖:￥{{item.money}} | 招聘人数:{{item.num}}</view>
+          <view>创建:{{item.createtime}} <text style="color:red;">({{item.status == 1 ? '正常' : '关闭'}})</text> </view>
+
+        </view>
+
+      </view>
+
+
+
+
+      <view class="payitem">
+
+
+<view bindtap='editTask' data-id="{{item.id}}">编辑 </view>
+
+<block wx:if="{{item.status == 1}}">
+  <view hidden="" bindtap='cancleTask' data-id="{{item.id}}">关闭</view>
+</block>
+<block wx:else>
+  <view hidden="" bindtap='upTask' data-id="{{item.id}}">开启</view>
+
+</block>
+</view>
+
+    </view>
+  </view>
+
+
+
+
+
+  <view class="nodata" wx:if="{{list.length == 0}}">
+    <image   src="../../imgs/icon/nodata.png"></image>
+</view>  
+
+
+</view>
+
+
+
+
+<view class="weixinmao-float">
+<view class="weixinmao-foot">
+<view class="footer" bindtap='toAddtask'>创建任务</view>
+</view>
+</view>

@@ -1,0 +1,811 @@
+/* search */
+/**app.wxss**/ 
+page {
+	background-size: 100% 100%;
+	height: 100%;
+	font-size: 32rpx;
+	font-family: "微软雅黑","方正黑体";
+  color:#333;
+  background:#f8f8f8;
+
+}
+
+.container_2 {
+  background-color: #f8f8f8;
+  min-height: 100%;
+  display: flex;
+flex-direction: column;
+align-items: center;
+  
+} 
+
+
+
+.header_2{
+  width:750rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top:30rpx;
+  padding-bottom: 30rpx;
+	background:#fff;
+  
+	}
+	.header_2_fixed{
+
+		width:750rpx;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		padding-top:30rpx;
+		padding-bottom: 30rpx;
+		background:#fff;
+		position: fixed;
+		z-index: 100;
+		top:0px;
+
+	}
+
+
+
+	
+
+
+  .city_2{
+  height: 80rpx;
+    line-height: 80rpx;
+    color: #000000;
+    font-size: .9rem;
+    font-weight: 600;
+  }
+  .search_2{
+  
+    width:500rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background:#f0f1f5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 30rpx 30rpx 30rpx 0rpx ;
+  
+  }
+  .search_2 view{
+      color:#a6a6a6;
+      font-size: .7rem;
+      align-self: center;
+  
+  }
+  .search_2 icon{
+  
+  margin-right: 20rpx;
+  margin-top: 18rpx;
+  
+	}
+	
+
+
+  .swiper-container_2{
+    width: 720rpx;
+    position: relative;  
+    margin-top:20rpx;
+  }
+  .swiper_box_2 {
+    width: 100%;
+  
+  }
+  
+  swiper-item_2 image {
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 20rpx;
+  
+  }
+  .swiper-container_2 .dots_2{  
+    position: absolute;  
+    left: 0;  
+    right: 0;  
+    bottom: 20rpx;  
+    display: flex;  
+    justify-content: center;  
+  }  
+  .swiper-container_2 .dots_2 .dot_2{  
+    margin: 0 8rpx;  
+    width: 14rpx;  
+    height: 14rpx;  
+    background: #fff;  
+    border-radius: 50%;  
+    transition: all .6s;  
+    opacity: .5;
+  }   
+  .swiper-container_2 .dots_2 .dot_2 .active_2{  
+    width: 14rpx;  
+    opacity: 1;
+  }
+  
+  .jobspace_2{
+
+    width:720rpx;
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-between;
+    margin-top:20rpx;
+  }
+
+  .jobspace_2 > view{
+
+    width:350rpx;
+    height:200rpx;
+    background:#fff;
+    border-radius: 30rpx  60rpx 30rpx 60rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .spaceitem_2 image{
+
+    width:90rpx;
+    height: 90rpx;
+  }
+
+  .spacetext_2{
+
+    display: flex;
+    flex-direction: column;
+
+    padding:20rpx;
+
+
+  }
+
+  .spacetext_2  view:nth-child(1){
+
+    font-size:.9rem;
+    color:#000000;
+    font-weight: 600;
+  }
+
+  .spacetext_2  view:nth-child(2){
+
+    font-size:.6rem;
+    color:#888888;
+  }
+
+
+  .navlist_2{
+    width:720rpx;
+    display: flex;
+    justify-content:space-around;
+    flex-direction: row;
+    padding-top:20rpx;
+    flex-wrap: wrap;
+    padding-bottom: 20rpx;
+    border-radius:15rpx;
+   
+   }
+   
+   .navlist_2 .item_2{
+       width:135rpx;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       font-size: .8rem;
+       padding-bottom: 30rpx;
+       color:#888888;
+   
+   }
+   .navlist_2 .item_2 image{
+     width:100rpx;
+     height: 100rpx;
+   
+   }
+   
+   .shares{
+   
+   width:100rpx;
+   height:100rpx;
+   }
+   button::after{
+   
+   border:0;
+   }
+
+   .catetitle_2{
+
+      width:720rpx;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top:20rpx;
+      
+
+   }
+   .catetitle_2 >view:nth-child(1){
+    font-weight: bold;
+    font-size:1rem;
+    color:#000000;
+   }
+
+   .catetitle_2 >view:nth-child(2){
+    font-size:.8rem;
+    color:#5b5b5b;
+    background:#efefef;
+    padding:18rpx;
+   }
+
+
+   .type-container_2{
+    width: 720rpx;
+    border-radius: 15rpx;
+    overflow: hidden;
+    margin-top:20rpx;
+  }
+  
+  .type-navbar_2{
+    white-space: nowrap;
+     
+  }
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+  }
+  .type-box_2{
+    padding-top:20rpx;
+    width:230rpx;
+    box-sizing: content-box;
+    font-size: 24rpx;
+    text-align: center;
+
+    background-color: #fff;
+    margin-right:10rpx;
+    border-radius: 20rpx;
+    padding-bottom: 20rpx;
+    display: flex;
+    flex-direction: column;
+
+    display: inline-block;
+    overflow: hidden;
+
+
+  
+  
+  }
+  .type-box_2 .companyname{
+    color:#000;
+    font-size:.8rem;
+  }
+  .type-box_2 image{
+    width:200rpx;
+    height:200rpx; 
+  }
+
+  .type-box_2 text{
+    color:red;
+  }
+
+  .type-item-on_2{
+    border-bottom: 4rpx solid #e64340;
+  }
+
+
+
+  .joblist_2{
+    display: flex;
+    flex-direction: row;
+    width:720rpx;
+    margin: 0 auto;
+    /*
+    border-bottom: 1px solid #efefef;
+    */
+    padding-top:25rpx;
+    padding-bottom:25rpx;
+    background:#FFF;
+    border-radius: 10rpx;
+    margin-bottom: 20rpx;
+    margin-top:20rpx;
+    }
+    
+    
+    
+    .joblist_2 .title_2{
+    width:100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    
+    }
+    .joblist_2 .title_2 .address_2{
+      padding-left: 2%;
+      font-size: .8rem;
+      color: #646464; 
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      width:700rpx;
+      padding-top: 20rpx;
+    }
+    
+
+  
+    .joblist_2 .title_2 .address_2 view:nth-child(1){
+       
+        color:#000000;
+        font-weight: bold;
+        width: 52%;
+    
+    }
+    
+    .joblist_2 .title_2 .address_2 view:nth-child(2){
+       
+        color:#ff9102;
+        font-weight: bold;
+        width: 47%;
+        text-align: right;
+        padding-right: 1%;
+       
+    
+    }
+  
+    
+    .joblist_2 .title_2 .detail_2{
+      padding-left: 2%;
+      text-align: left;
+      font-size: .8rem;
+      color: #000; 
+      display: flex;
+      flex-direction: row;
+      width:100%;
+      margin-top:15rpx;
+    }
+    
+    .joblist_2 .title_2 .detail_2 .pic_2 {
+      width:10%;
+      display: flex;
+      align-items: center;
+    
+    }
+    .joblist_2 .title_2 .detail_2 .pic_2 image{
+      width:60rpx;
+      height: 60rpx;
+      align-self: center;
+    }
+    .joblist_2 .title_2 .detail_2 .info_2{
+    
+        width:100%;
+        display: flex;
+        flex-direction: row;
+  
+    
+    }
+    
+  
+     .companyinfo_3{
+    
+      display: flex;
+      flex-direction: row;
+      justify-content:flex-start;
+      font-size:1.2rem;
+      color: #888888; 
+      width:700rpx;
+    }
+    .companyinfo_3 view{
+      margin-right: 8rpx;
+    }
+
+    
+    .joblist_2 .title_2 .price_2{
+    
+    width:28%;
+    }
+    
+    .joblist_2 .title_2 .price_2 .money_2{
+    color:#d65408;
+    font-weight:bold;
+    font-size: .7rem;
+    padding-right: 10rpx;
+    }
+    .jobname_2{
+      font-size: 1rem;
+      color: #000000;
+        display: flex;
+      flex-direction: row;
+    
+    }
+    .jobname_2>text{
+    color:#FFF;
+    background: #ff5d37;
+    padding: 6rpx;
+    border-radius: 5rpx;
+    
+    
+    }
+    .jobname_2 image{
+    
+       width:40rpx;
+      height: 40rpx;
+      
+    }
+    
+    
+    
+    
+    .joblable_2{
+    
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: .7rem;
+      color: #888888;
+      padding-left: 2%;
+      margin-top:10rpx;
+    }
+    
+    .vprice_2{
+    font-size: .6rem;
+      background: #34c6c3;
+      font-weight: bold;
+      color: #FFF;
+      height: 70rpx;
+      line-height: 70rpx;
+      width:140rpx;
+
+      margin-left:80rpx;
+      
+      border-radius: 40rpx;
+      text-align: center;
+    }
+    
+    .special_2{
+    
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+       margin-top:10rpx;
+      padding-left: 2%;
+
+      width:700rpx;
+    }
+    .special_2 .items_2{
+    
+      margin-right: 10rpx;
+      border-radius: 5rpx;
+      padding: 8rpx;
+      font-size: 30rpx;
+      margin-top: 10rpx;
+      background:#f6f6f4;
+      color:#888888;
+      
+    }
+    .moneyinfo_2{
+
+      color:#34c6c3;
+      font-size:1rem;
+      font-weight: bold;
+    }
+
+    .time_2{
+
+      text-align: right;
+      padding-right:25rpx;
+    }
+
+    .fxmoney_2{
+
+      display:flex;
+      flex-direction: column;
+      margin-top:20rpx;
+    }
+
+    .fxmoney_2 > view{
+
+      font-size:.6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .fxmoney_2 > view:nth-child(1)
+    {
+      width:200rpx;
+      height:60rpx;
+      background:#ff4c35;
+      border-radius: 10rpx 10rpx 0 0;
+      border:1rpx solid #ff4c35;
+      color:#fff;
+
+    }
+
+    .fxmoney_2 > view:nth-child(2)
+    {
+      width:200rpx;
+      height:60rpx;
+      background:#fff;
+      border-radius: 0rpx 0rpx 10rpx 10rpx;
+      border:1rpx solid #ff4c35;
+      color:#ff4c35;
+      text-align: center;
+      
+    }
+
+    .jobinfo_2{
+       
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    .jobinfo_2 >view:nth-child(1)
+    {
+
+      width:20%;
+    }
+    .logo{
+
+      width:150rpx;
+      height: 150rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding:1rpx;
+    }
+    .logo image{
+
+      width:100rpx;
+      height: 100rpx;
+      border-radius: 5rpx;
+    }
+
+    .jobinfo_2 >view:nth-child(2)
+    {
+
+      width:70%;
+ 
+    }
+
+    .notice{
+
+      width:700rpx;
+      background: #FFF;
+      margin-top:20rpx;
+      display: flex;
+      flex-direction: row;
+      font-size:.8rem;
+      padding-top:40rpx;
+      justify-content: space-between;
+      padding-left:30rpx;
+      
+    
+    }
+    .notice text{
+      color: #42BE9C;
+      margin-top: 10rpx;
+      margin-right: 10rpx;
+    }
+    
+
+    .swiper_container_move {
+      height: 120rpx;
+      width: 650rpx;
+      padding-left:20rpx;
+                                                                                                                                                                                                                                                                                                                                                                                                                                         
+     }
+      
+     .swiper_item_move{
+      font-size: .8rem;
+      text-overflow: ellipsis;
+      letter-spacing: 2px;
+      display:flex;
+      flex-direction: column;
+      padding-top:10rpx;
+     }
+
+     .arc{
+       display:flex;
+       flex-direction: column;
+        
+     }
+     .arc view{
+
+      width:100rpx;
+      height: 50rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size:.7rem;
+     }
+
+     .arc view:nth-child(2){
+      background: #3366CC;
+      color:#fff;
+      border-radius: 5rpx;
+     }
+
+    .morejob{ 
+
+      width:750px;
+      height: 80rpx;
+      line-height: 80rpx;
+      background: #FFF;
+      margin-top: 20rpx;
+      color:#3366CC;
+      font-size: .8rem;
+      text-align:center;
+    }
+  .footerinfo{
+    display: flex;
+    flex-direction: row;
+    font-size: .7rem;
+    background: #fff;
+    width:750rpx;
+    justify-content: center;
+
+  }
+
+  .footerinfo view{
+    width:150rpx;
+    text-align:center;
+  }
+	
+
+
+	.selectcars{
+
+    width:710rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding:20rpx;
+    font-size:.8rem;
+    background: #FFFFFF;
+  
+  }
+  .selectcars_fixed{
+
+    width:710rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding:20rpx;
+    font-size:.8rem;
+
+    z-index: 1112;
+    position: fixed;
+    top: 120rpx;
+    background: #fff;
+
+  }
+  
+   .itemselectcars{
+  
+    display: flex;
+    flex-direction: row;
+    height: 60rpx;
+    justify-content: center;
+		align-items: center;
+    width:33%;
+    
+		
+  }
+  
+   .itemselectcars image{
+  
+    width:15rpx;
+    height: 15rpx;
+    align-self: center;
+    margin-left:5rpx;
+
+  }
+
+  .red{
+    color:#fd6a36;
+  }
+
+
+
+  .select_cars,
+.select_sort,
+.select_price {
+	position: fixed;
+  top: 90px;
+  left:0px;
+	z-index: 888;
+  width: 750rpx;
+  padding-left:30rpx;
+
+	background-color: #fff;
+}
+
+.select_cars text,
+.select_sort text {
+	display: block;
+	flex: 1;
+	line-height: 35px;
+	font-size: 13px;
+}
+
+.select_cars text:last-child,
+.select_sort text:last-child {
+	border-bottom: 0;
+}
+
+.select_cars_list {
+	display: flex;
+	border-bottom: 1px solid #ececec;
+}
+
+.select_cars_list image {
+	width: 12px;
+	height: 22px;
+  padding-top: 8px;
+  margin-right: 30rpx;
+}
+.select {
+	border-bottom: 1px solid #e62129;
+}
+
+.select text {
+	color: #e62129;
+}
+
+.select_price {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+	flex-wrap: wrap;
+  padding: 6px 4%;
+  padding-top:30rpx;
+
+}
+.select_price .item{
+
+ 
+  height: 80rpx;
+  background: #f3f3f3;
+  padding-left:15rpx;
+  padding-right: 15rpx;
+  border-radius: 35rpx;
+  margin-right: 22rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:12px;
+}
+
+
+
+/* 遮罩层 */
+.small_overlay {
+	position: fixed;
+  width: 100%;
+  height: 80%;
+  bottom: 0;
+  left: 0;
+  z-index: 666;
+  background-color: rgba(0,0,0,0.5);
+}
+
+
+
+
+.nodata{
+
+    width:750rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    margin-top: 300rpx;
+  
+  }
+  .nodata image{
+  
+    width:150rpx;
+    height: 150rpx;
+  }

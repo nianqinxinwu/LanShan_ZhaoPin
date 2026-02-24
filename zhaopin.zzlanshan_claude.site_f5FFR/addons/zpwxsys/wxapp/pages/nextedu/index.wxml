@@ -1,0 +1,197 @@
+<form bindsubmit="savepubinfo" report-submit>
+
+<view class="container">
+
+    <view class="main">
+
+      <view class="header">
+         创建简历(2/4)
+        </view>
+        <view class="title" >
+        <text bindtap="addedu">+添加教育经历</text> 
+        </view>
+
+
+        <view class="list">
+
+         
+        
+
+            <view class="item">
+              <view class="name">入学时间<text>*</text></view>
+              <view class="selectitem">  
+                <picker mode="date" value="{{begindateschool}}" bindchange="BeginDateSchool">
+                    <view class="picker">
+                        {{begindateschool?begindateschool:'请选择'}}
+                    </view>
+                </picker>
+
+
+                      
+             </view>
+
+            </view>
+
+            <view class="item">
+              <view class="name">毕业时间<text>*</text></view>
+              <view class="selectitem">  
+                <picker mode="date" value="{{enddateschool}}" bindchange="EndDateSchool">
+                    <view class="picker">
+                        {{enddateschool?enddateschool:'请选择'}}
+                    </view>
+                </picker>
+
+
+                      
+             </view>
+
+            </view>
+
+
+            <view class="item">
+              <view class="name">学 校<text>*</text></view>
+              <view class="selectitem"><input  value="" type="text" name="school" placeholder="请输入学校" value="{{eduinfo.school}}" cursor-spacing ="140"/></view>
+
+            </view>
+
+  
+           <view class="item">
+              <view class="name">学 历<text>*</text></view>
+              <view class="selectitem">  
+              
+             <picker value="{{Index}}"  range="{{education}}" range-key=""  bindchange="bindEducationChange">  
+              <view class="picker">  
+
+                  {{educationname ? educationname : '请选择学历'}}
+              </view>  
+            </picker>
+          </view>
+            </view>
+
+
+        
+
+            <view class="item">
+              <view class="name"> 专业<text>*</text></view>
+              <view class="selectitem"><input  type="text"  value = "{{eduinfo.vocation}}" name="vocation" placeholder="请输入专业" cursor-spacing ="140" /></view>
+
+            </view>
+
+   
+              
+      
+
+
+
+        </view>
+
+
+
+        <view class="title" ></view>
+        <view class="list" wx:if="{{ln > 0}}">
+
+         
+        
+
+          <view class="item">
+              <view class="name">入学时间<text>*</text></view>
+              <view class="selectitem">  
+                <picker mode="date" value="{{begindateschool2}}" bindchange="BeginDateSchool2">
+                    <view class="picker">
+                        {{begindateschool2?begindateschool2:'请选择'}}
+                    </view>
+                </picker>
+
+
+                      
+             </view>
+
+            </view>
+
+            <view class="item">
+              <view class="name">毕业时间<text>*</text></view>
+              <view class="selectitem">  
+                <picker mode="date" value="{{enddateschool2}}" bindchange="EndDateSchool2">
+                    <view class="picker">
+                        {{enddateschool2 ? enddateschool2:'请选择'}}
+                    </view>
+                </picker>
+
+
+                      
+             </view>
+
+            </view>
+
+
+            <view class="item">
+              <view class="name">学 校<text>*</text></view>
+              <view class="selectitem"><input  value="{{eduinfo.school2}}" type="text" name="school2" placeholder="请输入学校" cursor-spacing ="140" /></view>
+
+            </view>
+
+  
+           <view class="item">
+              <view class="name">学 历<text>*</text></view>
+              <view class="selectitem">  
+              
+             <picker value="{{Index}}"  range="{{education}}" range-key=""  bindchange="bindEducationChange2">  
+              <view class="picker">  
+
+                  {{educationname2 ? educationname2 : '请选择学历'}}
+              </view>  
+            </picker>
+          </view>
+            </view>
+
+
+        
+
+            <view class="item">
+              <view class="name"> 专业<text>*</text></view>
+              <view class="selectitem"><input  type="text"  value = "{{eduinfo.vocation2}}" name="vocation2" placeholder="请输入专业" cursor-spacing ="140" /></view>
+
+            </view>
+
+
+
+  
+
+
+
+
+</view>
+
+
+
+
+
+
+    </view>
+
+
+
+      
+
+
+
+
+</view>
+
+<view class="weixinmao-float">
+    <view class="weixinmao-foot">
+   
+
+       <button class="footer"  formType="submit"  style="background-color:#fe552e ;">下一步</button>
+
+    </view>
+</view>
+
+   </form>
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+
+<import src="../index/templates/mytasklist.wxml" />
+
+<view style="height:28rpx;"></view>
+
+<!-- 列表 -->
+<view class="news">
+
+   
+
+    
+
+
+                <template is="mytasklist" wx:if="{{tasklist.length>0}}" data="{{tasklist}}" />
+
+
+
+
+
+                    <view class="nodata" wx:if="{{tasklist.length == 0}}">
+    <image   src="../../imgs/icon/nodata.png"></image>
+</view>  
+
+
+
+</view>

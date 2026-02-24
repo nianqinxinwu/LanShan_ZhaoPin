@@ -1,0 +1,82 @@
+<!-- search -->
+<import src="../index/templates/ejoblist.wxml" />
+
+
+
+<view class="container_2">
+
+
+<view class="header_2" >
+	<navigator url="../city/index?id=1" hover-class="none">
+
+    <view class="city_2">
+     <text class="fa fa-map-marker  fa-lg"></text> {{city}}
+    </view>
+
+	</navigator>
+    <view class="search_2" bindtap='toSelectJob'>
+      	<icon type="search" size="14"/><view>请搜索职位名称</view>
+    </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 列表 -->
+<view class="news">
+
+   
+
+    
+
+
+                <template is="ejoblist" wx:if="{{joblist}}" data="{{joblist}}" />
+
+
+
+
+              </view>
+
+
+</view>
+
+
+
+<!-- 加载更多 -->
+<view class="loadmore">
+	<text>{{loadMore}}</text>
+</view>
+
+<view class="u-tap-btn">
+
+  <button class="u-go-home2" open-type='contact'>
+<view class="iconfont fa fa-comments-o" ></view>
+  </button>
+</view>
+
+
+
+

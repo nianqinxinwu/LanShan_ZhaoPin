@@ -1,0 +1,126 @@
+@import '../templates/css/index_2.wxss';
+page{
+  background: #f5f5f5;
+}
+
+.filter-tabs {
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  background: #FFF;
+  border-bottom: 1rpx solid #efefef;
+}
+
+.filter-tabs .tab {
+  flex: 1;
+  text-align: center;
+  padding: 24rpx 0;
+  font-size: 14px;
+  color: #666;
+  position: relative;
+}
+
+.filter-tabs .tab.active {
+  color: #2577f5;
+  font-weight: bold;
+}
+
+.filter-tabs .tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60rpx;
+  height: 4rpx;
+  background: #2577f5;
+  border-radius: 2rpx;
+}
+
+.container {
+  background-color: #f5f5f5;
+  min-height: 100%;
+}
+.container .orderlist{
+  
+  width:750rpx;
+  display: flex;
+  flex-direction: column;
+  background: #FFF;
+  margin-top: 10rpx;
+}
+.container .orderlist .orderid{
+  border-bottom:  1rpx solid #efefef;
+  padding-top:20rpx;
+  padding-bottom: 20rpx;
+  padding-left: 20rpx;
+  font-size: .8rem;
+
+}
+
+.container .orderlist .content{
+
+  font-size: .8rem;
+  border-bottom:  1rpx solid #efefef;
+
+}
+.container .orderlist .content .item{
+    
+  padding-top:16rpx;
+  padding-bottom: 16rpx;
+  padding-left: 20rpx;
+   border-bottom:  1rpx dotted #efefef;
+   display: flex;
+   flex-direction: row;
+}
+ .payitem {
+  width:100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+  padding-bottom: 20rpx;
+  padding-top: 20rpx;
+  padding-right: 2%;
+}
+ .payitem view{
+  width:180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  margin-left: 20rpx;
+  border-radius: 5rpx;
+  background: #3274e5;
+  font-size: .6rem;
+  color: #FFF;
+
+}
+.payitem view:nth-child(1){
+
+  background: #e64340;
+
+}
+
+
+
+.intro{
+padding: 10rpx;
+font-size: .8rem;
+
+}
+
+.nodata{
+
+  width:750rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 300rpx;
+
+}
+.nodata image{
+
+  width:150rpx;
+  height: 150rpx;
+}

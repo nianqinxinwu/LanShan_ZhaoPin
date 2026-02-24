@@ -1,0 +1,211 @@
+
+<!-- 模式1: 报名者列表 (从具体职位进入) -->
+<block wx:if="{{jobid}}">
+<view class="container">
+  <view class="report-header" wx:if="{{jobinfo}}">
+    <view class="report-title">「{{jobinfo.jobtitle}}」报名表</view>
+    <view class="report-time">{{jobinfo.work_start_date}}-{{jobinfo.work_end_date}} {{jobinfo.work_start_time}}-{{jobinfo.work_end_time}}</view>
+    <view class="report-stats">报名 {{applicantList.length}} 人 / 需要 {{jobinfo.num}} 人</view>
+  </view>
+
+  <view class="select-all-bar" wx:if="{{applicantList.length > 0}}">
+    <view class="check-item" bindtap="toggleSelectAll">
+      <view class="checkbox {{selectAll ? 'checked' : ''}}"></view>
+      <text>全选</text>
+    </view>
+    <view class="selected-count">已选 {{selectedCount}} 人</view>
+  </view>
+
+  <view class="applicant-table" wx:if="{{applicantList.length > 0}}">
+    <view wx:for="{{applicantList}}" wx:key="index" class="applicant-row {{item.disabled ? 'row-disabled' : ''}}">
+      <view class="check-item" bindtap="toggleSelect" data-index="{{index}}">
+        <view class="checkbox {{item.selected ? 'checked' : ''}} {{item.disabled ? 'checkbox-disabled' : ''}}"></view>
+      </view>
+      <image class="row-avatar" src="{{item.avatarUrl || '../../imgs/icon/nodata.png'}}" bindtap="toWorkerDetail" data-uid="{{item.uid}}"></image>
+      <view class="row-name" bindtap="toWorkerDetail" data-uid="{{item.uid}}">{{item.name || '求职者'}}</view>
+      <view class="row-rating">
+        <text wx:for="{{item.ratingStars}}" wx:for-item="star" wx:key="*this" class="rating-flower">{{star == 'full' ? '❀' : (star == 'half' ? '❁' : '✿')}}</text>
+      </view>
+      <view class="row-sex">{{item.sexText}}</view>
+      <view class="row-age">{{item.calcAge}}</view>
+      <view class="row-edu">{{item.eduText}}</view>
+      <view class="row-tag-selected" wx:if="{{item.disabled}}">已选</view>
+    </view>
+  </view>
+
+  <view class="nodata" wx:if="{{applicantList.length == 0}}">
+    <image src="../../imgs/icon/nodata.png"></image>
+  </view>
+</view>
+
+<view class="weixinmao-float" wx:if="{{applicantList.length > 0}}">
+  <view class="weixinmao-foot confirm-foot">
+    <view class="confirm-btn" bindtap="confirmSelect">选择 {{selectedCount}} 人</view>
+  </view>
+</view>
+</block>
+
+<!-- 模式2: 简历筛选条件 (原有功能) -->
+<block wx:else>
+<view class="VerticalBox">
+
+
+
+<scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh - 75rpx)">
+  <view class="cu-item {{1==TabCur?'text-green cur':''}}"  bindtap='tabSelect' data-id="1">
+    行业类别
+  </view>
+
+
+
+  <view class="cu-item {{2==TabCur?'text-green cur':''}}"  bindtap='tabSelect' data-id="2">
+    薪资
+  </view>
+
+  <view class="cu-item {{3==TabCur?'text-green cur':''}}"  bindtap='tabSelect' data-id="3">
+    学历
+  </view>
+
+
+  <view class="cu-item {{4==TabCur?'text-green cur':''}}"  bindtap='tabSelect' data-id="4">
+    工作经验
+  </view>
+
+  <view class="cu-item {{5==TabCur?'text-green cur':''}}"  bindtap='tabSelect' data-id="5">
+    性别要求
+  </view>
+
+
+
+
+
+
+
+
+</scroll-view>
+
+
+
+
+<scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 75rpx)" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+
+
+
+  <view class="padding-top padding-lr"   id="main-1">
+
+    <view class='cu-bar' >
+      <view class='action' style="font-size: 14px;margin-bottom: 20rpx;">行业类别 </view>
+    </view>
+        <view class="lists">
+
+          <view wx:for="{{jobcate}}" class="item {{cateid == item.id ? 'bred' : ''}} " bindtap="toCateType" data-id='{{item.id}}'>{{item.name}}</view>
+
+        </view>
+
+  </view>
+
+
+
+
+  <view class="padding-top padding-lr"   id="main-2">
+
+<view class='cu-bar' >
+<view class='action' style="font-size: 14px;margin-bottom: 20rpx;">薪资</view>
+</view>
+  <view class="lists">
+
+
+    <view wx:for="{{jobprice}}" class="item {{priceid == item.name ? 'bred' : ''}} " bindtap="toPriceType" data-id='{{item.name}}'>{{item.name}}</view>
+
+
+
+
+
+  </view>
+
+</view>
+
+
+  <view class="padding-top padding-lr"   id="main-3">
+
+<view class='cu-bar' >
+<view class='action' style="font-size: 14px;margin-bottom: 20rpx;">学历</view>
+</view>
+  <view class="lists">
+
+    <view class="item {{edu == '初中' ? 'bred' : ''}}" bindtap="toEdu" data-id='初中'>初中</view>
+    <view class="item {{edu == '高中' ? 'bred' : ''}}" bindtap="toEdu" data-id='高中'>高中</view>
+    <view class="item {{edu == '中技' ? 'bred' : ''}}" bindtap="toEdu" data-id='中技'>中技</view>
+    <view class="item {{edu == '中专' ? 'bred' : ''}}" bindtap="toEdu" data-id='中专'>中专</view>
+    <view class="item {{edu == '大专' ? 'bred' : ''}}" bindtap="toEdu" data-id='大专'>大专</view>
+    <view class="item {{edu == '本科' ? 'bred' : ''}}" bindtap="toEdu" data-id='本科'>本科</view>
+    <view class="item {{edu == '硕士' ? 'bred' : ''}}" bindtap="toEdu" data-id='硕士'>硕士</view>
+    <view class="item {{edu == '博士' ? 'bred' : ''}}" bindtap="toEdu" data-id='博士'>博士</view>
+    <view class="item {{edu == '博后' ? 'bred' : ''}}" bindtap="toEdu" data-id='博后'>博后</view>
+  </view>
+
+</view>
+
+
+
+  <view class="padding-top padding-lr"   id="main-4">
+
+<view class='cu-bar' >
+<view class='action' style="font-size: 14px;margin-bottom: 20rpx;">工作经验</view>
+</view>
+  <view class="lists">
+    <view class="item {{express == '无经验' ? 'bred' : ''}}" bindtap="toExpress" data-id='无经验'>无经验</view>
+    <view class="item {{express == '1年以下' ? 'bred' : ''}}" bindtap="toExpress" data-id='1年以下'>1年以下</view>
+    <view class="item {{express == '1-3年' ? 'bred' : ''}}" bindtap="toExpress" data-id='1-3年'>1-3年</view>
+    <view class="item {{express == '3-5年' ? 'bred' : ''}}" bindtap="toExpress" data-id='3-5年'>3-5年</view>
+
+    <view class="item {{express == '5-10年' ? 'bred' : ''}}" bindtap="toExpress" data-id='5-10年'>5-10年</view>
+    <view class="item {{express == '10年以上' ? 'bred' : ''}}" bindtap="toExpress" data-id='10年以上'>10年以上</view>
+
+  </view>
+
+</view>
+
+
+
+
+<view class="padding-top padding-lr"   id="main-5">
+
+<view class='cu-bar' >
+<view class='action' style="font-size: 14px;margin-bottom: 20rpx;">性别要求</view>
+</view>
+  <view class="lists">
+
+    <view class="item  {{sex == 0 ? 'bred' : ''}}"  bindtap="toSex" data-id="0">男女不限</view>
+    <view class="item {{sex == 1 ? 'bred' : ''}}"  bindtap="toSex"  data-id="1">限男性</view>
+    <view class="item {{sex == 2 ? 'bred' : ''}}" bindtap="toSex" data-id="2">限女性</view>
+
+  </view>
+
+</view>
+
+
+
+
+</scroll-view>
+</view>
+
+
+
+<view class="weixinmao-float">
+  <view class="weixinmao-foot">
+
+
+     <view class="footer" bindtap="toReastJob"  data-id="{{data.companyid}}">
+重置
+</view>
+
+    <view class="footer" bindtap="toSearchJob">
+
+   查询{{notecount}}条简历
+   </view>
+
+
+  </view>
+</view>
+</block>

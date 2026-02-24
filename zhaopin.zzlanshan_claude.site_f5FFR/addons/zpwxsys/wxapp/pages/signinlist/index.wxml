@@ -1,0 +1,40 @@
+<view class="container">
+
+  <view class="filter-tabs">
+    <view class="tab {{currentTab == -1 ? 'active' : ''}}" bindtap="switchTab" data-type="-1">全部</view>
+    <view class="tab {{currentTab == 1 ? 'active' : ''}}" bindtap="switchTab" data-type="1">进行中</view>
+    <view class="tab {{currentTab == 0 ? 'active' : ''}}" bindtap="switchTab" data-type="0">已结束</view>
+  </view>
+
+  <view wx:for="{{list}}" wx:key="index" class="signin-card" bindtap="toDetail" data-id="{{item.id}}">
+    <view class="card-header">
+      <view class="job-title">{{item.jobtitle}}</view>
+      <view class="job-status {{item.status == 1 ? 'status-on' : 'status-off'}}">{{item.status == 1 ? '进行中' : '已结束'}}</view>
+    </view>
+    <view class="card-body">
+      <view class="stat-item">
+        <view class="stat-num">{{item.notecount || 0}}</view>
+        <view class="stat-label">报名人数</view>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <view class="stat-num signin-num">{{item.signin_count || 0}}</view>
+        <view class="stat-label">已签到</view>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <view class="stat-num signout-num">{{item.signout_count || 0}}</view>
+        <view class="stat-label">已签退</view>
+      </view>
+    </view>
+    <view class="card-footer">
+      <view class="create-time">创建时间: {{item.createtime}}</view>
+      <view class="go-detail">查看详情 ></view>
+    </view>
+  </view>
+
+  <view class="nodata" wx:if="{{list.length == 0}}">
+    <image src="../../imgs/icon/nodata.png"></image>
+  </view>
+
+</view>

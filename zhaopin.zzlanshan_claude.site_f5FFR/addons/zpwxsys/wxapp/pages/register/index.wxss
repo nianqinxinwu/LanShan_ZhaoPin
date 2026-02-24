@@ -1,0 +1,108 @@
+.container {
+  background-color: #FFF;
+  min-height: 100%;
+  display:flex;
+  flex-direction: column;
+
+}
+
+.register{
+
+  width:700rpx;
+  padding-top:60rpx;
+  padding-bottom: 30rpx;
+  text-align: right;
+  margin-right: 50rpx;
+  color:#07B56D;
+  font-size: 14px;
+
+}
+
+.login{
+
+  width:700rpx;
+  font-size: 24px;
+  font-weight: 600;
+  margin-left:30rpx;
+
+}
+
+.inputlist{
+
+  display: flex;
+  flex-direction:column;
+
+  padding:50rpx;
+
+
+
+}
+
+.inputitem{
+
+  display: flex;
+  flex-direction:row;
+  border-bottom: 1rpx solid #f5f5f5;
+  padding-bottom:30rpx;
+
+}
+.inputitem view:nth-child(1){
+
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.inputitem image{
+
+  width:40rpx;
+  height: 40rpx;
+}
+
+.inputitem input{
+
+  width:500rpx;
+  height: 80rpx;
+  margin-left:30rpx;
+}
+
+.button{
+  margin-top:30rpx;
+
+
+}
+
+.button button{
+
+
+  background:#07B56D;
+  border-radius: 15rpx;
+  color:#fff;
+  font-size: 14px;
+  height: 100rpx;
+  line-height: 100rpx;
+
+}
+.code{
+
+  width:250rpx;
+  height: 60rpx;
+  background:#fff;
+  color:#07B56D;
+  font-size:14px;
+}
+
+.agree{
+
+  display: flex;
+  flex-direction: row;
+  color:#A2A2A2;
+  font-size:12px;
+  margin-top:50rpx;
+
+}
+button::after{
+
+  border:0rpx;
+}

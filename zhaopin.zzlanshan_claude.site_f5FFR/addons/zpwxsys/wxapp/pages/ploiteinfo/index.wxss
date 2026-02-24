@@ -1,0 +1,88 @@
+page{
+  background-color: #ffffff;
+}
+.container {
+  background-color: #ffffff;
+  min-height: 100%
+}
+
+.casetitle{
+  width:700rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  
+  font-size: .7rem;
+  border-bottom: 1rpx solid #efefef;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  padding-left:5rpx;
+  
+  }
+  .casetitle view:nth-child(1){
+  
+    height: 30rpx;
+    line-height: 30rpx;
+    width:8rpx;
+    background:#fd4e31;
+    align-self: center;
+    
+    
+  
+  }
+   .casetitle view:nth-child(2){
+  
+    height: 80rpx;
+    line-height: 80rpx;
+    width:150rpx;
+    padding-left: 15rpx; 
+    font-size:13px;
+    font-weight: 600;
+    color: #5f5e63;
+  
+  }
+
+  .caselist{
+    display: flex;
+    flex-direction: column;
+    width:700rpx;
+    padding:20rpx;
+  }
+
+  .caselist .item{
+    padding:10rpx;
+
+    border-bottom: 1rpx solid #f9f9f9;
+
+
+  }
+  .caselist .item text{
+    margin-left: 20rpx;
+  }
+
+  .casecontent textarea{
+    padding-right: 5%;
+    width: 700rpx;
+    padding-left: 5%;
+
+    height: 250rpx;
+    margin-top: 20rpx;
+    font-size: 12px;
+    color: #333;
+  }
+  .casebtn button{
+
+    text-align: center;
+
+    width: 90%;
+    margin-left: 5%;
+    line-height: 80rpx;
+    background: #B2B2B2;
+    border-radius: 20rpx;
+    font-size: 28rpx;
+    color: #FFFFFF;
+    height: 80rpx;
+
+    background: #eb4f38;
+  }

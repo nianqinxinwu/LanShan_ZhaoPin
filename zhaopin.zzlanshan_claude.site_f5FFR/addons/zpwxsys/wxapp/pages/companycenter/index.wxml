@@ -1,0 +1,143 @@
+
+
+<!--weixinmao_jz/pages/agentcenter/index.wxml-->
+<!--weixinmao_hssy/pages/user/index.wxml-->
+<view class="container">
+
+
+<view class="main" style="background:{{intro.maincolor}}">
+
+</view>
+
+ <view class="header" >
+
+          
+
+         <view hidden="">
+                  <view class="pic" >
+                  
+                    <image src="{{companyinfo.thumb}}"></image>
+                              <view class="userinfo">
+                              
+                              <view>{{companyinfo.companyname}}</view>
+                              
+                                <view bindtap="toEditcompany">企业信息编辑</view>
+                                
+                                </view>
+
+                  </view>
+
+      </view>
+
+        
+
+
+
+  <view class="mymoney">
+
+  <view class="item_line" bindtap="toNoteorder">
+      <view>{{totaljobnum}}条</view>
+      <view>职位数量</view>
+  </view>
+  <view class="line">
+  </view>
+  <view class="item_line" bindtap="toMyorder">
+      <view>{{totalnotenum}}次</view>
+      <view>查看简历</view>
+  </view>
+
+  <view class="line">
+  </view>
+  <view class="item_line">
+      <view>{{totaltopnum}}次</view>
+      <view>置顶职位</view>
+  </view>
+
+  <view class="line">
+  </view>
+  <view class="item_line">
+      <view>{{totalspreadnum}}次</view>
+      <view>加急扩散</view>
+  </view>
+
+    <view class="line">
+  </view>
+
+  <view class="item_line" bindtap='toRecharge'>
+      <view style="color:#2577f5;">{{coinBalance}}</view>
+      <view>章鱼币</view>
+  </view>
+
+    <view class="line">
+  </view>
+
+    <view class="item_line" bindtap='toCompanyrole'>
+      <view>购买套餐</view>
+      <view>升级会员</view>
+  </view>
+
+   
+  
+</view>
+
+
+
+
+</view>
+
+ 
+
+
+
+
+ 
+
+
+  <view class="list">
+     <view class="item" bindtap="toMyjoblist"><image src="../../imgs/icon/msgorder.png"></image><view style="margin-left:16rpx;">职位管理</view></view>   
+           
+ <view class="item" bindtap="toCompanynote"><image src="../../imgs/icon/matchorder.png"></image><view style="margin-left:16rpx;">简历管理</view></view>
+
+
+
+
+ <view class="item" bindtap="toActive"><image src="../../imgs/icon/matchorder.png"></image><view style="margin-left:16rpx;">参与招聘会</view></view>
+
+
+   <view class="item" bindtap="toMytasklist"><image src="../../imgs/icon/msgorder.png"></image><view style="margin-left:16rpx;">任务管理</view></view>  
+<!--
+  <view class="item" bindtap="toMynote"><image src="../../imgs/icon/qorder.png"></image><view style="margin-left:16rpx;">查看简历数<text style='color:red;font-weight:600;'>(剩余:{{companyinfo.notenum}}条)</text></view></view>
+
+
+<view class="item" bindtap="toCompanychat"><image src="../../imgs/icon/msgorder.png"></image><view style="margin-left:16rpx;">在线客服</view></view>
+-->
+
+    <view class="item" bindtap="loginout"><image src="../../imgs/icon/qorder.png"></image><view style="margin-left:16rpx;">退出登录</view></view>
+
+<!--
+
+       <view class="item" bindtap="toShopmsg"><image src="../../resource/images/sendmsg.png"></image><view style="margin-left:16rpx;">接收消息</view></view>
+
+        <view class="item" bindtap="loginout"><image src="../../resource/images/logout.png"></image><view style="margin-left:16rpx;">退出登录</view></view>
+
+        -->
+ 
+  </view>
+</view>
+
+
+
+
+
+
+
+<view class="u-tap-btn">
+  
+   <navigator url="/pages/index/index" open-type="navigate" class="u-go-home">
+    <view class="iconfont fa fa-home"></view>
+  </navigator>
+</view>
+
+
+
+

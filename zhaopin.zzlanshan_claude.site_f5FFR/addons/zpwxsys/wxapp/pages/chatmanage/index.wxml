@@ -1,0 +1,31 @@
+<view class="container">
+
+  <view class="section">
+    <view class="section-title">群公告</view>
+    <textarea class="notice-input" placeholder="编辑群公告..." value="{{notice}}" bindinput="onNoticeInput" maxlength="200"></textarea>
+    <button class="save-btn" bindtap="saveNotice">保存公告</button>
+  </view>
+
+  <view class="section">
+    <view class="section-title">群成员 ({{members.length}}人)</view>
+    <view wx:for="{{members}}" wx:key="uid" class="member-item">
+      <image class="member-avatar" src="{{item.avatarUrl || '../../imgs/icon/nodata.png'}}"></image>
+      <view class="member-info">
+        <view class="member-name">
+          {{item.name}}
+          <text wx:if="{{item.role == 2}}" class="role-tag owner">群主</text>
+          <text wx:elif="{{item.role == 1}}" class="role-tag admin">管理</text>
+          <text wx:if="{{item.is_muted}}" class="role-tag muted">禁言</text>
+        </view>
+        <view class="member-time">加入于 {{item.jointime}}</view>
+      </view>
+
+      <view class="member-actions" wx:if="{{myRole >= 1 && item.role < myRole}}">
+        <view wx:if="{{!item.is_muted}}" class="action-btn mute" bindtap="doMute" data-uid="{{item.uid}}" data-mute="1">禁言</view>
+        <view wx:else class="action-btn unmute" bindtap="doMute" data-uid="{{item.uid}}" data-mute="0">解禁</view>
+        <view class="action-btn kick" bindtap="doKick" data-uid="{{item.uid}}">移出</view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,430 @@
+page{
+
+  background:#f5f5f5;
+}
+.container {
+  background-color: #f5f5f5;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.container .header{
+  width:750rpx;
+  height:330rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image:url(https://api.site100.cn/userbg.png); background-repeat:no-repeat;background-size:100% 100%;
+} 
+
+.container .header .pic{
+
+width:750rpx;
+height: 250rpx;
+align-self: center;
+display: flex;
+flex-direction: row;
+align-items:center;
+padding-left:20rpx;
+
+}
+.container .header .pic image{
+   width:120rpx;
+   height: 120rpx;
+   border:0rpx solid #FFF; 
+   border-radius: 120rpx;
+ 
+}
+.container .header .pic .userinfo{
+
+  height: 110rpx;
+   width:580rpx;
+    font-size: .8rem;
+  margin-left: 15rpx;
+   color: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+
+}
+
+
+.mymoney{
+
+  width:700rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top:20rpx;
+  flex-wrap: wrap;
+  background: #FFF;
+  border-radius: 25rpx;
+  margin-top:-220rpx;
+  height: 440rpx;
+  
+  }
+
+  .mymoney view:nth-child(1){
+
+    margin-top:50rpx;
+    color:#a2a2a2;
+
+  }
+
+  .mymoney view:nth-child(2){
+
+    margin-top:40rpx;
+    font-size:22px;
+    font-weight: bold;
+
+    
+  }
+
+
+  .mymoney view:nth-child(3){
+
+    align-self: center;
+height:80rpx;
+line-height: 80rpx;
+font-size: .9rem;
+display: flex;
+justify-content: center;
+
+
+border-radius: 0rpx;
+
+
+    margin-top:100rpx;
+    background: #ff9003;
+    width:60%;
+    color:#FFF;
+    border-radius: 5rpx;
+    font-size: 1rem;
+
+
+    
+  }
+
+
+  .noteoper{
+
+    width:700rpx;
+    background: #fff;
+    height: 200rpx;
+    border-radius: 25rpx;
+    margin-top:-80rpx;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  .noteoper .item_note{
+
+    display: flex;
+    flex-direction: row;
+    width:350rpx;
+    justify-content: center;
+
+  }
+  .noteoper .item_note view:nth-child(1){
+
+    margin-right: 8rpx;
+  }
+.item_note image{
+
+  width: 80rpx;
+  height: 80rpx;
+}
+.item_title{
+  display:flex;
+  flex-direction: column;
+}
+
+.item_title view:nth-child(1){
+
+  font-size:14px;
+  font-weight: bold;
+}
+
+
+.item_title view:nth-child(2){
+
+  font-size:12px;
+  color: #a2a2a2;
+}
+
+
+
+
+.navlist{
+  width:700rpx;
+  display: flex;
+  justify-content:space-around;
+  flex-direction: row;
+  padding-top:20rpx;
+  flex-wrap: wrap;
+  background: #FFF;
+  border-radius: 25rpx;
+  margin-top:-80rpx;
+  height: 240rpx;
+  align-items: center;
+ 
+ }
+ 
+ .navlist .item{
+     width:130rpx;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     font-size: .7rem;
+     padding-bottom: 30rpx;
+     position: relative;
+ 
+ }
+
+
+ .tipmsg{
+  background: red;
+  color:#fff;
+  width:35rpx;
+  height: 35rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*
+  padding:8rpx;
+  border-radius: 100%;
+  */
+  position: absolute;
+  top:-12rpx;
+  left:80rpx;
+  z-index:1000;
+
+  font-size: .7rem;
+
+ }
+
+
+
+
+ .tipmsg{
+  background: #ff6b6b;
+  color:#fff;
+  width:90rpx;
+  height: 50rpx;
+  border-radius: 15rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*
+  padding:8rpx;
+  border-radius: 100%;
+  */
+  position: absolute;
+  top:-12rpx;
+  left:80rpx;
+  z-index:1000;
+
+  font-size: .7rem;
+
+ }
+ .navlist .item image{
+   width:80rpx;
+   height: 80rpx;
+ 
+ }
+
+
+ .container .list{
+
+  width:700rpx;
+  margin-top:20rpx;
+  margin-bottom:20rpx;
+  background: #FFF;
+  border-radius: 25rpx;
+
+}
+.container .list .item{
+    padding-top: 35rpx;
+    padding-bottom: 35rpx;
+    font-size: 14px;
+    border-bottom: 0rpx solid #efefef;
+    padding-left: 20rpx;
+    color: #747474;
+    display: flex;
+    flex-direction: row;
+
+} 
+.container .list .item image{
+  width: 55rpx;
+  height: 55rpx;
+  margin-right: 10rpx;
+
+}
+
+/* 章鱼币系统样式 */
+.coin-tabs {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+}
+.coin-tabs .tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 24rpx 0;
+  font-size: 30rpx;
+  color: #666;
+  position: relative;
+}
+.coin-tabs .tab-item.active {
+  color: #2577f5;
+  font-weight: bold;
+}
+.coin-tabs .tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  width: 40%;
+  height: 4rpx;
+  background: #2577f5;
+  border-radius: 2rpx;
+}
+
+.coin-balance-card {
+  background: linear-gradient(135deg, #2577f5, #1aadfd);
+  margin: 20rpx 25rpx;
+  padding: 40rpx 30rpx;
+  border-radius: 20rpx;
+  color: #fff;
+  text-align: center;
+}
+.balance-label {
+  font-size: 28rpx;
+  opacity: 0.9;
+}
+.balance-value {
+  font-size: 60rpx;
+  font-weight: bold;
+  margin: 16rpx 0;
+}
+.balance-desc {
+  font-size: 24rpx;
+  opacity: 0.7;
+}
+
+.point-balance-card {
+  background: linear-gradient(135deg, #ff8300, #ffaa00);
+  margin: 20rpx 25rpx;
+  padding: 40rpx 30rpx;
+  border-radius: 20rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.coin-section {
+  background: #fff;
+  margin: 20rpx 25rpx;
+  padding: 30rpx;
+  border-radius: 16rpx;
+}
+.coin-section .section-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.recharge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.recharge-item {
+  width: 30%;
+  border: 2rpx solid #eee;
+  border-radius: 12rpx;
+  padding: 20rpx 0;
+  text-align: center;
+  margin-bottom: 16rpx;
+}
+.recharge-item.selected {
+  border-color: #2577f5;
+  background: #f0f6ff;
+}
+.item-amount {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+.item-price {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 8rpx;
+}
+
+.btn-recharge {
+  background: #2577f5 !important;
+  color: #fff !important;
+  border-radius: 50rpx !important;
+  margin-top: 20rpx;
+  font-size: 30rpx !important;
+}
+
+.btn-exchange {
+  background: #ff8300 !important;
+  color: #fff !important;
+  border-radius: 50rpx !important;
+  margin-top: 20rpx;
+  font-size: 30rpx !important;
+}
+.btn-exchange[disabled] {
+  background: #ccc !important;
+  color: #999 !important;
+}
+
+/* 积分获取卡片 — 与充值档位同结构，橙色高亮 */
+.point-earn-card {
+  border-color: #ff8300;
+  background: #fff8f0;
+}
+.point-earn-card .item-amount {
+  color: #ff8300;
+}
+.point-earn-card .item-price {
+  color: #ff8300;
+  font-weight: bold;
+}
+
+.exchange-info {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.8;
+}
+
+.coin-menu {
+  background: #fff;
+  margin: 20rpx 25rpx;
+  border-radius: 16rpx;
+}
+.coin-menu .menu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.coin-menu .menu-item image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 16rpx;
+}

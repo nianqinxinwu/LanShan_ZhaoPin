@@ -1,0 +1,232 @@
+
+<import src="../index/templates/ejoblist.wxml" />
+<view class="container" hidden='{{isshow}}'>
+ 
+  <view class="jobinfo">
+
+      <view class="jobtitle">
+          <view>{{data.jobtitle}}</view>
+          <view>{{data.money}}<block wx:if="{{data.settle_type > 0}}"> · <block wx:if="{{data.settle_type == 1}}">日结</block><block wx:elif="{{data.settle_type == 2}}">周结</block><block wx:elif="{{data.settle_type == 3}}">月结</block><block wx:elif="{{data.settle_type == 4}}">完工结</block></block></view>
+      </view>
+
+     
+      
+      <view class="joblabel">
+         
+      
+          <view>{{data.education}} | {{data.express}} </view>
+    
+          
+      </view>
+ 
+     
+
+
+
+
+
+  <view class="jobdetail">
+      <view class="jobtitle">福利待遇</view>
+  </view>
+
+    <view class="contentlist" style="padding-left:20rpx;">
+
+      <view class="special">
+            <view class="item" wx:for="{{data.special}}">{{item}} </view>
+  
+      </view>
+
+    </view>
+
+
+   
+
+      <!-- 
+
+  <view class="jobdetail">
+      <view class="jobtitle">联系方式</view>
+  </view>
+              <view class="contentlist">
+                  
+                <view class="listitem">
+                    <view class="items"><text class="fa fa-user fa-lg" style="color:#bfbfbf"></text> <text>{{companyinfo.mastername}}</text></view>
+                    <view class="items"  bindtap='doCall'   data-tel="{{companyinfo.tel}}"><text class="fa fa-phone fa-lg" style='color:#bfbfbf;'></text><text>{{companyinfo.tel}}</text></view>
+                  
+                </view>
+                    
+              </view>
+
+-->
+
+
+
+
+
+
+  <block wx:if="{{data.videourl }}">
+
+  <view class="jobdetail">
+      <view class="jobtitle">视频介绍</view>
+  </view>
+  <view class="jobcontent">
+      <view class="detail2"> 
+      
+       <video autoplay="true" src='{{data.videourl}}' style='width:700rpx;'></video>
+       </view>
+  </view>
+
+</block>
+
+
+
+     <view class="jobdetail">
+      <view class="jobtitle">职位说明</view>
+  </view>
+  <view class="jobcontent">
+
+      <view class="jobfiled">
+      
+      <view>招聘: {{data.num}}人  </view>
+      <view>年龄: {{data.age}} </view>
+      <view>性别: <block wx:if="{{data.sex==1}}"> 男</block><block wx:elif="{{data.sex==2}}">女</block><block wx:else>男女不限</block> </view>
+      <view>学历: {{data.education}}</view>
+      
+      </view>
+
+      <view class="jobfiled2">
+      
+     职责范围: 
+
+    </view>
+
+      <view class="detail">
+      
+        <rich-text nodes="{{data.content}}"></rich-text>
+      
+      
+      </view>
+  </view>
+
+
+
+
+  <view class="jobdetail">
+      <view class="jobtitle">企业信息</view>
+  </view>
+
+
+
+
+          <view class="company">
+                  <view class="companyinfo">
+
+                      <view class="companyname">
+                          <view  bindtap='toCompanyDetail' data-id="{{data.companyid}}">{{companyinfo.companyname}}</view>
+                          <view  bindtap='toCompanyDetail' data-id="{{data.companyid}}">规模: {{companyinfo.companyworker}}   性质: {{companyinfo.companytype}}   行业: {{companyinfo.companycate}} </view>
+                          <view bindtap="goMap" style="font-size: 16px;color:#3366CC;font-weight: bold;"><text class="fa fa-map-marker fa-lg" style='color:#3366CC;'></text> {{companyinfo.address}}</view>
+                        </view>
+
+                  </view>
+                
+                  
+          </view>
+
+        <view class="map" bindtap="goMap">
+          <map id="map" longitude="{{companyinfo.lng}}" latitude="{{companyinfo.lat}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width:700rpx; height: 400rpx;"></map>
+
+        </view>
+
+
+  </view>
+
+<!--
+
+  <view class="jobtips">
+  <view>
+   面试过程中，用人单位如收费用均有诈骗嫌疑!如遇无效、虚假、诈骗信息，请举报
+  </view>
+   <view class="suggest">
+    <view><image src="../../resource/img/jb.png"></image></view>
+        <view>举报</view>
+   
+   </view>
+  </view>
+-->
+  <block wx:if="{{piclist.length>0}}" >
+  <view class="jobdetail">
+      <view class="jobtitle">企业环境</view>
+  </view>
+  <view class="jobcontent">
+      <view class="detail2"> 
+        
+        <block wx:for="{{piclist}}" >
+        <image  data-id=""  src="{{item}}"  mode="widthFix" bindload='imgHeight' style="width:750rpx;" />
+       
+          </block>
+       </view>
+  </view>
+
+</block>
+
+
+
+<view class="jobdetail">
+      <view class="jobtitle" style="margin-left:25rpx;">为您推荐</view>
+  </view>
+  
+
+  <template is="ejoblist" wx:if="{{joblist}}" data="{{joblist}}" />
+
+
+</view>
+
+
+
+
+
+
+<view class="weixinmao-float">
+    <view class="weixinmao-foot">
+       <view class="footer"><button open-type="share"><text class="fa fa-share-square-o fa-lg"></text></button></view>
+
+       <view class="footer" bindtap='formSubmit' class="black" data-id="{{data.id}}" > <text class="fa fa-star fa-lg"></text> 海报</view>
+
+       <view class="footer" bindtap='toPloitejob' class="black" data-id="{{data.id}}" > <text class="fa fa-black-tie fa-lg"></text> 举报</view>
+
+       <view class="footer" bindtap='doSavejob' class="{{savestatus == 1 ? 'red' : 'black' }}" data-id="{{companyinfo.id}}" > <text class="fa fa-heart-o fa-lg"></text> 收藏</view>
+
+       <view class="footer"   bindtap="doSendjob" data-id="{{companyinfo.id}}"  > 
+
+        投递简历
+ 
+
+     
+     </view>
+    </view>
+</view>
+
+
+
+  
+
+
+
+
+
+<view class="u-tap-btn">
+
+<button class="u-go-home2" open-type='contact'>
+<view class="iconfont fa fa-comments-o" ></view>
+</button>
+</view>
+
+
+<view class='imagePathBox' hidden="{{maskHidden == false}}">
+      <image src="{{imagePath}}" class='shengcheng'></image>
+      <button class='baocun' bindtap='baocun2'>保存相册，分享到朋友圈</button>
+    </view>
+    
+   <view hidden="{{maskHidden == false}}" class="mask"></view> 
+  <view class="canvas-box">
+      <canvas  style="width: 375px;height: 667px;position:fixed;top:9999px" canvas-id="mycanvas"/>
+  </view> 

@@ -1,0 +1,157 @@
+page {
+  background: #f5f5f5;
+}
+
+.container {
+  min-height: 100vh;
+}
+
+.filter-tabs {
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  background: #FFF;
+  border-bottom: 1rpx solid #efefef;
+}
+
+.filter-tabs .tab {
+  flex: 1;
+  text-align: center;
+  padding: 24rpx 0;
+  font-size: 14px;
+  color: #666;
+  position: relative;
+}
+
+.filter-tabs .tab.active {
+  color: #2577f5;
+  font-weight: bold;
+}
+
+.filter-tabs .tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60rpx;
+  height: 4rpx;
+  background: #2577f5;
+  border-radius: 2rpx;
+}
+
+.signin-card {
+  margin: 20rpx 24rpx;
+  background: #FFF;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.05);
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28rpx 30rpx 16rpx;
+}
+
+.job-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.job-status {
+  font-size: .7rem;
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+  margin-left: 16rpx;
+}
+
+.status-on {
+  background: #e8f5e9;
+  color: #4caf50;
+}
+
+.status-off {
+  background: #f5f5f5;
+  color: #999;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 24rpx 30rpx;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.stat-num {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.signin-num {
+  color: #4caf50;
+}
+
+.signout-num {
+  color: #2577f5;
+}
+
+.stat-label {
+  font-size: .7rem;
+  color: #999;
+  margin-top: 8rpx;
+}
+
+.stat-divider {
+  width: 1rpx;
+  height: 60rpx;
+  background: #eee;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 30rpx 24rpx;
+  border-top: 1rpx solid #f5f5f5;
+}
+
+.create-time {
+  font-size: .7rem;
+  color: #bbb;
+}
+
+.go-detail {
+  font-size: .7rem;
+  color: #2577f5;
+}
+
+.nodata {
+  width: 750rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 300rpx;
+}
+
+.nodata image {
+  width: 150rpx;
+  height: 150rpx;
+}

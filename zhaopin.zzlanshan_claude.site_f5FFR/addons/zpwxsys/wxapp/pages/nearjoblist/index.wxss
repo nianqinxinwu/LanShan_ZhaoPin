@@ -1,0 +1,269 @@
+/* search */
+/**app.wxss**/
+@import '../templates/css/index_2.wxss';
+page {
+	background-size: 100% 100%;
+	height: 100%;
+	font-size: 32rpx;
+	font-family: "微软雅黑","方正黑体";
+	color:#333;
+}
+
+.container_2 {
+  background-color: #f0f1f5;
+  min-height: 100%;
+  display: flex;
+flex-direction: column;
+align-items: center;
+  
+}
+
+/*
+.search image {
+	width: 30rpx;
+	height: 34rpx;
+	padding-right: 3px;
+	vertical-align: sub;
+}
+
+.search text {
+	line-height: 30px;
+	font-size: 14px;
+	color: #e62129;
+}
+
+.search_box {
+	display: flex;
+	flex: 1;
+	height: 30px;
+	padding-left: 15px;
+	margin: 10px 0 0 10px;
+	background-color: #f7f7f7;
+}
+
+.search_box icon {
+	padding-top: 8px;
+}
+
+.search_box text {
+	flex: 1;
+	padding-left: 5px;
+	color: #999;
+}
+
+*/
+
+.header_2{
+  width:750rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top:30rpx;
+  padding-bottom: 30rpx;
+	background:#fff;
+  
+	}
+	.header_2_fixed{
+
+		width:750rpx;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		padding-top:30rpx;
+		padding-bottom: 30rpx;
+		background:#fff;
+		position: fixed;
+		z-index: 100;
+		top:0px;
+
+	}
+
+
+
+	
+
+
+  .city_2{
+  height: 80rpx;
+    line-height: 80rpx;
+    color: #000000;
+    font-size: .9rem;
+    font-weight: 600;
+  }
+  .search_2{
+  
+    width:500rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background:#f0f1f5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 30rpx 30rpx 30rpx 0rpx ;
+  
+  }
+  .search_2 view{
+      color:#a6a6a6;
+      font-size: .7rem;
+      align-self: center;
+  
+  }
+  .search_2 icon{
+  
+  margin-right: 20rpx;
+  margin-top: 18rpx;
+  
+	}
+	
+
+
+	.selectcars{
+
+    width:750rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding:20rpx;
+    font-size:.8rem;
+    background: #FFFFFF;
+  
+  }
+  .selectcars_fixed{
+
+    width:750rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding:20rpx;
+    font-size:.8rem;
+
+    z-index: 1112;
+    position: fixed;
+    top: 120rpx;
+    background: #fff;
+
+  }
+  
+   .itemselectcars{
+  
+    display: flex;
+    flex-direction: row;
+    height: 60rpx;
+    justify-content: center;
+		align-items: center;
+    width:24%;
+    
+		
+  }
+  
+   .itemselectcars image{
+  
+    width:15rpx;
+    height: 15rpx;
+    align-self: center;
+    margin-left:5rpx;
+
+  }
+
+  .red{
+    color:#fd6a36;
+  }
+
+
+
+  .select_cars,
+.select_sort,
+.select_price {
+	position: fixed;
+  top: 110px;
+  left:0px;
+	z-index: 888;
+  width: 750rpx;
+  padding-left:30rpx;
+
+	background-color:#fff;
+}
+
+.select_cars text,
+.select_sort text {
+	display: block;
+	flex: 1;
+	line-height: 35px;
+	font-size: 13px;
+}
+
+.select_cars text:last-child,
+.select_sort text:last-child {
+	border-bottom: 0;
+}
+
+.select_cars_list {
+	display: flex;
+	border-bottom: 1px solid #ececec;
+}
+
+.select_cars_list image {
+	width: 12px;
+	height: 22px;
+  padding-top: 8px;
+  margin-right: 30rpx;
+}
+.select {
+	border-bottom: 1px solid #e62129;
+}
+
+.select text {
+	color: #e62129;
+}
+
+.select_price {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+	flex-wrap: wrap;
+  padding: 6px 4%;
+  padding-top:30rpx;
+
+}
+.select_price .item{
+
+ 
+  height: 80rpx;
+  background: #f3f3f3;
+  padding-left:15rpx;
+  padding-right: 15rpx;
+  border-radius: 35rpx;
+  margin-right: 22rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:12px;
+}
+
+
+
+/* 遮罩层 */
+.small_overlay {
+	position: fixed;
+  width: 100%;
+  height: 80%;
+  bottom: 0;
+  left: 0;
+  z-index: 666;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.imglabel{
+
+  position: absolute;
+  top:-10rpx;
+  left:-15rpx;
+
+}
+
+
+
+
+
+

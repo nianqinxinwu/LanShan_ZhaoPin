@@ -1,0 +1,105 @@
+<!-- search -->
+
+
+
+<view class="container_2">
+
+
+
+
+
+
+<!-- 列表 -->
+<view class="news"> 
+
+   
+
+    
+    
+    <view class="joblist_2" wx:if="{{companylist.length>0}}" wx:for="{{companylist}}">
+                              <view class="title_2" bindtap="toCompanyDetial" data-id="{{item.id}}">
+  
+                                <view class="jobinfo_2">
+
+                                  <view class="logo">
+                                    <image src="{{item.thumb}}"></image>
+                                  </view>
+  
+                                      <view class="jobinfoleft_2">
+                                                      <view class="address_2">
+                                                              <view class="jobname_2">{{item.companyname}} </view>  
+  
+                                                              <view  class="moneyinfo_2">
+                                                              
+                                                              
+                                                              </view>
+                                                             
+                                                      </view>
+  
+                                                
+  
+                                                      <view class="special_2">
+                                                      <!--
+                                                                  <view class="items_2" wx:for="{{item.special}}" wx:for-item="itemSpecial">{{itemSpecial}}</view>
+                                                    -->
+                                                    <view class="items_2" >{{item.companytype}}</view> 
+                                                    <view class="items_2" >{{item.companyworker}}</view>
+                                                    <view class="items_2" >{{item.companycate}}</view>
+                                                      </view>
+   
+                                        </view>
+  
+                                   
+  
+  
+                              
+                              </view>
+  
+  
+  
+  
+                                         <view class="detail_2">
+                                            
+                                             <view class="info_2">
+                                            
+                                                    <view class="companyinfo_3" style="font-size:.9rem;"> 
+                                                  <view>{{item.jobcount}}个职位在招</view>  <block wx:for="{{item.joblist}}"  wx:for-index="itemIndex" wx:for-item="itemJob"  > <view wx:if="{{itemIndex<2}}">{{itemJob.jobtitle}}</view></block>
+                                                       
+                                                    </view>
+                                                
+                                              </view>
+                                        </view>
+                              </view>
+                  </view>
+  
+  
+     
+  
+  
+
+
+
+        <view class="nodata" wx:if="{{companylist.length == 0}}">
+            <image   src="../../imgs/icon/nodata.png"></image>
+        </view>  
+
+
+
+
+              </view>
+
+
+</view>
+
+
+
+<!-- 加载更多 -->
+<view class="loadmore">
+	<text>{{loadMore}}</text>
+</view>
+
+
+
+
+
+

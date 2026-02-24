@@ -1,0 +1,155 @@
+/* pages/selectcars/index.wxss *//* pages/component/nav/nav.wxss */
+.VerticalNav.nav {
+  width: 200rpx;
+  white-space: initial;
+}
+
+.VerticalNav.nav .cu-item {
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  margin: 0;
+  border: none;
+  height: 50px;
+  position: relative;
+}
+
+.VerticalNav.nav .cu-item.cur {
+  background-color: #f1f1f1;
+}
+.VerticalNav.nav .cu-item.cur::after {
+  content: "";
+  width: 8rpx;
+  height: 30rpx;
+  border-radius: 10rpx 0 0 10rpx;
+  position: absolute;
+  background-color: currentColor;
+  top: 0;
+  right: 0rpx;
+  bottom: 0;
+  margin: auto;
+}
+.VerticalBox{
+  display: flex;
+
+}
+.VerticalMain{
+  background-color: #f1f1f1;
+}
+
+.lists{
+
+  width:500rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.lists .item{
+
+
+ padding:20rpx;
+  background: #fff;
+  border-radius: 40rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10rpx;
+
+}
+
+
+.weixinmao-float{ height: 150rpx;}
+.weixinmao-foot{ 
+  display:flex; 
+  justify-content: center;
+  flex-direction:row;
+  position: fixed; 
+  z-index: 999; 
+  left: 0; 
+  bottom: 0; 
+  width: 100%; 
+  padding-top:20rpx;
+  padding-bottom: 20rpx;
+  background: #ffffff;
+  
+  }
+
+
+
+
+
+
+button::after{
+border: none;
+}
+
+  
+.weixinmao-foot > view:nth-child(1){
+  color:#fd6a36;
+  align-self: center;
+  width:220rpx;
+  height: 100rpx;
+  font-size: .9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:1rpx solid #fd6a36;
+  border-radius: 50rpx;
+  margin-right: 10rpx;
+}    
+.black{
+color:#777676;
+
+}
+.red{
+
+color:red;
+
+}
+.bred{
+  color:#fd6a36;
+  border: 1rpx solid #fd6a36;
+
+}
+.weixinmao-foot > view:nth-child(2){
+color:#FFF;
+align-self: center;
+width:420rpx;
+height: 100rpx;
+font-size: .9rem;
+display: flex;
+justify-content: center;
+align-items: center;
+background: #fd6a36;
+border-radius: 50rpx;
+}
+
+.weixinmao-foot view image{
+width:100rpx;
+height: 100rpx;
+align-self: center;
+
+}
+.lxname{
+
+  width:180rpx;
+  padding:20rpx;
+  height: 50rpx;
+  border-radius: 60rpx;
+  color:#ffffff;
+  font-size: 12px;
+  background:#4ca7f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:20rpx;
+}
+
+.footerbutton{
+
+
+background: #fe552e;
+}

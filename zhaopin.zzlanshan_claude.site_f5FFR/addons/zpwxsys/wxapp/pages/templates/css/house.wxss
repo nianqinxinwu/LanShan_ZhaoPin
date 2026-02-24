@@ -1,0 +1,175 @@
+
+
+  .housenewslist{
+    display: flex;
+    flex-direction: row;
+    width:700rpx;
+    margin: 0 auto;
+    border-bottom: 0px solid #efefef;
+    padding:15rpx;
+    background: #fff;
+    margin-top:10rpx;
+    }
+    
+     .housenewslist .pic{
+    width:35%;
+    height: 220rpx;
+    line-height: 220rpx;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+     position:relative;
+    }
+     .housenewslist .pic image{
+     width:260rpx;
+     height: 190rpx;
+     border-radius: 10rpx;
+    }
+    
+     .housenewslist .title{
+    width:65%;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+  
+    padding-top: 5rpx;
+    }
+     .housenewslist .title .address{
+      padding-left: 5%;
+      text-align: left;
+
+    display: flex;
+    flex-direction: column;
+
+    }
+    
+     .housenewslist .title .address > view:nth-child(1){
+      
+      font-size: 14px;
+        font-weight: bold;
+        color: #191e23; 
+        
+    }
+     .housenewslist .title .address > view:nth-child(2){
+
+
+       margin-top:15rpx;
+    }
+    
+      .housenewslist .title .address > view:nth-child(3){
+       
+       color: #979797; 
+       margin-top:15rpx;
+    }
+    
+     .housenewslist .title .price{
+      padding-left: 5%;
+      text-align: left;
+      font-size: .7rem;
+    color: #6a6a6a; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ 
+    align-self: baseline;
+    width:450rpx;
+    }
+     .housenewslist .title .price view text{
+      
+    padding: 10rpx 15rpx;
+    border-radius: 3rpx;
+    margin-right: 5rpx;
+    height: 20rpx;
+    line-height:20rpx; 
+    color:#77af6e;
+      background: #f7f5f6;
+    
+    }
+ .money{
+   
+    padding-right: 10rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+ 
+    }
+
+.money1{
+      color:#ee3b35;
+      font-weight:bold;
+      font-size: 1rem;
+    }
+ 
+    .commentview{
+
+      display: flex;
+      flex-direction: row;
+      color:#989898;
+      font-size:12px;
+      font-weight: 500;
+
+    }
+
+    .commentview image{
+
+      width:50rpx;
+      height: 50rpx;
+    }
+    
+
+    .imglabel{
+  
+      position: absolute;
+      top:-10rpx;
+      left:-15rpx;
+    
+    }
+ 
+
+
+
+ 
+
+   
+
+  .housespecial_2{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+     margin-top:10rpx;
+    padding-left: 2%;
+  
+    width:700rpx;
+  }
+  .housespecial_2 .items_2{
+  
+    margin-right: 10rpx;
+    border-radius: 5rpx;
+    padding: 8rpx;
+    font-size: 30rpx;
+    margin-top: 10rpx;
+
+    
+  }
+
+
+  .housespecial_2 .items_2:nth-child(1){
+
+    background:#fef4eb;
+    color:#e28341;
+  }
+
+  .housespecial_2 .items_2:nth-child(2){
+
+    background:#ffe6ea;
+    color:#e32a25;
+  }
+
+  .housespecial_2 .items_2:nth-child(3){
+
+    background:#edf1f4;
+    color:#79838d;
+  }

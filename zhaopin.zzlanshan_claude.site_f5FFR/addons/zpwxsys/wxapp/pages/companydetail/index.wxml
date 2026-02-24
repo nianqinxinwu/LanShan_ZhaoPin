@@ -1,0 +1,165 @@
+<import src="../index/templates/ejoblist.wxml" />
+<view class="container">
+
+
+
+<view class="header" style=' background:linear-gradient(to right,#2577f5,#2577f5);'>
+
+       
+
+
+      <view class="companyinfo">
+
+                <view class="companyname">{{data.companyname}}</view>
+
+      
+
+               <view class="pic" >
+               
+  
+                           <view class="userinfo">
+                              <view>{{data.companycate}} | {{data.companytype}} | {{data.companyworker}} </view>
+                              <view style="margin-top:20rpx;"></view>
+                              <view class="cert">认证企业 <button class="nogz" bindtap="toGz">{{isgz == 1 ? '√ 关注' : '+ 关注'}}</button> <button class="nogz" bindtap="toPublisherCard">名片</button></view>
+                             </view>
+
+                             <image style="width:110rpx;height:100rpx;" src="{{data.thumb}}"></image>
+
+               </view>
+
+   </view>
+
+
+
+
+</view>
+
+
+
+
+
+
+
+<view class="news">
+
+
+   <view class="type-container_switch">
+     <scroll-view class="type-navbar_switch" scroll-x="true">
+        <view class="type-box_switch">
+             <view id="1" class="type-navbar-item_switch {{activeCategoryId == 1 ? 'type-item-on_switch' : ''}}" bindtap="tabClick" >
+                 在招职位
+             </view>
+       </view>
+       <view class="type-box_switch">
+             <view id="2" class="type-navbar-item_switch {{activeCategoryId == 2 ? 'type-item-on_switch' : ''}}" bindtap="tabClick" >
+                 企业简介
+             </view>
+       </view>
+
+        <view class="type-box_switch">
+             <view id="3" class="type-navbar-item_switch {{activeCategoryId == 3 ? 'type-item-on_switch' : ''}}" bindtap="tabClick" >
+               企业评价
+             </view>
+       </view>
+         
+    
+     </scroll-view>
+ </view>
+
+       
+
+               <view hidden="{{activeCategoryId == 1 ? false :true}}">  
+                <template is="ejoblist" wx:if="{{joblist}}" data="{{joblist}}" />
+                  
+                         
+ 
+     </view>
+
+
+
+
+</view>
+
+
+<view hidden="{{activeCategoryId ==3 ? false :true}}">
+
+      <view class="commentlist" wx:for="{{commentlist}}" wx:key="index"  >
+                                 <view class="commentpic">
+                                       <image src="{{item.avatarUrl}}"></image>
+                                 </view>
+                                 <view class="commenttitle" >
+                                           <view class="addresstop">{{item.nickname}}</view>
+                                             <view  class="addresstop" style=" font-size: .7rem;color:#ff553c;">    <block wx:if="{{item.score== 1}}"><text class="fa fa-star  fa-lg"></text> </block> <block wx:if="{{item.score== 2}}"><text class="fa fa-star  fa-lg"></text> <text class="fa fa-star  fa-lg"></text></block><block wx:if="{{item.score== 3}}"><text class="fa fa-star  fa-lg"></text> <text class="fa fa-star  fa-lg"></text><text class="fa fa-star  fa-lg"></text></block><block wx:if="{{item.score== 4}}"><text class="fa fa-star  fa-lg"></text> <text class="fa fa-star  fa-lg"></text><text class="fa fa-star  fa-lg"></text><text class="fa fa-star  fa-lg"></text></block><block wx:if="{{item.score== 5}}"><text class="fa fa-star  fa-lg"></text> <text class="fa fa-star  fa-lg"></text><text class="fa fa-star  fa-lg"></text><text class="fa fa-star  fa-lg"></text><text class="fa fa-star  fa-lg"></text></block>
+                                   </view>
+                                           <view class="content">
+                                             {{item.content}}
+                                           </view>
+                                         
+
+                                             <block wx:if="{{item.piclist}}"  >
+
+
+                            <view class="piclist">
+                          
+                                   <image wx:for="{{item.piclist}}" wx:for-item="itempic" src="{{itempic}}" style='width:160rpx;height:160rpx;'></image>
+                                   
+                                
+                               </view>
+                               </block>
+                                       
+                                           
+
+                                           <view class="time">
+                                             <view>{{item.create_time}}</view>
+                                             <view></view>
+                                             </view>
+                                           
+
+
+                                 </view>
+                                 
+         </view>
+
+
+<!--
+<view class="pubcomment"><button bindtap='toComment' data-id="{{data.id}}">发表评论...</button></view>
+-->
+
+
+</view>
+
+
+
+
+<view class="company" hidden="{{activeCategoryId == 2 ? false :true}}">
+ <view class="clist">
+     <view class="ctitle">企业介绍</view>
+     <view class="dcontent">
+      <rich-text nodes="{{data.content}}"></rich-text>
+
+     </view>
+ </view>
+
+   <view class="clist">
+     <view class="ctitle">企业地址</view>
+     <view class="dcontent">
+     {{data.address}}
+     </view>
+ </view>
+
+
+ <view class="clist">
+     <view class="ctitle">企业环境照</view>
+     <view class="dcontent">
+      <image  wx:for="{{companyimglist}}"  src="{{item}}" />
+     </view>
+ </view>
+
+</view>
+
+
+
+</view>
+
+
+

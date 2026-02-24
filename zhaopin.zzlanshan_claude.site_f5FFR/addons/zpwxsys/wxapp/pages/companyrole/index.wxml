@@ -1,0 +1,64 @@
+
+
+
+
+<view class="levellist">
+<view class="levelmain">
+
+ <block wx:for="{{companyrolelist}}">
+    <view class="levelitem  {{curNav == item.id ? 'selected' : ''}}" bindtap="selectNav" data-index="{{index}}" data-id="{{item.id}}"    >
+
+        <view>{{item.title}}</view>
+        <view>￥{{item.money}}</view>
+<view>简历{{item.notenum}}次</view>
+
+<view>职位{{item.jobnum}}数</view>
+
+    </view>
+
+		</block>
+  
+
+
+
+
+
+</view>
+
+</view>
+
+
+
+<!--去充值模块-->
+<view class="goblance">
+
+  <view class="txt_t">
+ 
+    <button bindtap="pay" data-money="500">购买企业套餐</button>
+  </view>
+</view>
+<!--充值余额成功弹出层-->
+
+
+<view class="scorelist">
+    <view class="title" >
+        <view>编号</view>
+        <view>职位/简历</view>
+        <view>剩余(职位/简历)</view>
+         <view>时间</view>
+
+    </view>
+    <view class="list" wx:for="{{companyrecordlist}}"  >
+        <view>{{item.id}}</view>
+        <view>{{item.type == 0 ? '充' : '消费'}}({{item.jobnum}}/{{item.notenum}}/{{item.topnum}}){{item.mark}}</view>
+       <view>{{item.totaljobnum}}/{{item.totalnotenum}}/{{item.totaltopnum}}</view>
+         <view>{{item.create_time}}</view>
+
+    </view>
+</view>
+
+
+
+
+
+

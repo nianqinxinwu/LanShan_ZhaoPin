@@ -1,0 +1,323 @@
+/* pages/selectcars/index.wxss *//* pages/component/nav/nav.wxss */
+.VerticalNav.nav {
+  width: 200rpx;
+  white-space: initial;
+}
+
+.VerticalNav.nav .cu-item {
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  margin: 0;
+  border: none;
+  height: 50px;
+  position: relative; 
+}
+
+.VerticalNav.nav .cu-item.cur {
+  background-color: #f1f1f1;
+}
+.VerticalNav.nav .cu-item.cur::after {
+  content: "";
+  width: 8rpx;
+  height: 30rpx;
+  border-radius: 10rpx 0 0 10rpx;
+  position: absolute;
+  background-color: currentColor;
+  top: 0;
+  right: 0rpx;
+  bottom: 0;
+  margin: auto;
+}
+.VerticalBox{
+  display: flex;
+
+}
+.VerticalMain{
+  background-color: #f1f1f1;
+}
+
+.lists{
+
+  width:500rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.lists .item{
+
+  padding:20rpx;
+  background: #fff;
+  border-radius: 40rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10rpx;
+
+}
+
+
+.weixinmao-float{ height: 150rpx;}
+.weixinmao-foot{ 
+  display:flex; 
+  justify-content: center;
+  flex-direction:row;
+  position: fixed; 
+  z-index: 999; 
+  left: 0; 
+  bottom: 0; 
+  width: 100%; 
+  padding-top:20rpx;
+  padding-bottom: 20rpx;
+  background: #ffffff;
+  
+  }
+
+
+
+
+
+
+button::after{
+border: none;
+}
+
+  
+.weixinmao-foot > view:nth-child(1){
+  color:#fd6a36;
+  align-self: center;
+  width:220rpx;
+  height: 100rpx;
+  font-size: .9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:1rpx solid #fd6a36;
+  border-radius: 50rpx;
+  margin-right: 10rpx;
+}    
+.black{
+color:#777676;
+
+}
+.red{
+
+color:red;
+
+}
+.bred{
+  color:#fd6a36;
+  border: 1rpx solid #fd6a36;
+
+}
+.weixinmao-foot > view:nth-child(2){
+color:#FFF;
+align-self: center;
+width:420rpx;
+height: 100rpx;
+font-size: .9rem;
+display: flex;
+justify-content: center;
+align-items: center;
+background: #fd6a36;
+border-radius: 50rpx;
+}
+
+.weixinmao-foot view image{
+width:100rpx;
+height: 100rpx;
+align-self: center;
+
+}
+.lxname{
+
+  width:180rpx;
+  padding:20rpx;
+  height: 50rpx;
+  border-radius: 60rpx;
+  color:#ffffff;
+  font-size: 12px;
+  background:#4ca7f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:20rpx;
+}
+
+.footerbutton{
+
+
+background: #fe552e;
+}
+
+/* 报名者列表模式样式 */
+.container {
+  background: #f5f5f5;
+  min-height: 100vh;
+  padding-bottom: 150rpx;
+}
+
+.report-header {
+  background: #FFF;
+  padding: 30rpx;
+  margin-bottom: 2rpx;
+}
+
+.report-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 12rpx;
+}
+
+.report-time {
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+  margin-bottom: 8rpx;
+}
+
+.report-stats {
+  font-size: 26rpx;
+  color: #666;
+  text-align: center;
+}
+
+.select-all-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  background: #FFF;
+  border-bottom: 1rpx solid #efefef;
+}
+
+.check-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.checkbox {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 6rpx;
+  border: 2rpx solid #ddd;
+  margin-right: 16rpx;
+}
+
+.checkbox.checked {
+  background: #2577f5;
+  border-color: #2577f5;
+}
+
+.selected-count {
+  font-size: .8rem;
+  color: #999;
+}
+
+.applicant-table {
+  background: #FFF;
+}
+
+.applicant-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20rpx 24rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.row-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+
+.row-name {
+  font-size: 28rpx;
+  color: #333;
+  width: 100rpx;
+  flex-shrink: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.row-rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 12rpx;
+  flex-shrink: 0;
+}
+
+.row-rating .rating-flower {
+  color: #ff8300;
+  font-size: 22rpx;
+  margin-right: 2rpx;
+}
+
+.row-sex,
+.row-age,
+.row-edu {
+  font-size: 24rpx;
+  color: #666;
+  margin-left: 12rpx;
+  flex-shrink: 0;
+}
+
+.row-disabled {
+  opacity: 0.5;
+}
+
+.checkbox-disabled {
+  background: #e0e0e0;
+  border-color: #d0d0d0;
+}
+
+.row-tag-selected {
+  font-size: 22rpx;
+  color: #FFF;
+  background: #a0a0a0;
+  border-radius: 6rpx;
+  padding: 4rpx 14rpx;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.confirm-foot {
+  justify-content: center;
+}
+
+.confirm-btn {
+  background: #2577f5;
+  color: #FFF;
+  border-radius: 50rpx;
+  padding: 0 60rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nodata {
+  width: 750rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 300rpx;
+}
+
+.nodata image {
+  width: 150rpx;
+  height: 150rpx;
+}

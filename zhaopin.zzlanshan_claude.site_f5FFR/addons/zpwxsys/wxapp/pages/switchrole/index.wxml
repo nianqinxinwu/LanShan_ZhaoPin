@@ -1,0 +1,48 @@
+<view class="container">
+    <view class="head bg-white">
+        <text class="tit">请选择你的身份？</text>
+        <text>>请选择你的身份，享受专属功能</text>
+    </view>
+    <view class="user_list">
+        <view bindtap="toTaskjob">
+            <image src="../../imgs/icon/user1.png"></image>
+            <view>
+                <text class="use_tit">我是求职者</text>
+                <text>免费发布、海量职位等您匹配</text>
+            </view>
+        </view>
+        <view bindtap="toLogin">
+            <image src="../../imgs/icon/user3.png"></image>
+            <view>
+                <text class="use_tit">我是企业</text>
+                <text>省时省力、找到对口人才</text>
+            </view>
+        </view>
+  
+    </view>
+ 
+</view>
+
+
+<view class="cu-bar tabbar foot bg-white">
+    <view class="action text-gray" bindtap="toIndex">
+      <view class="cuIcon-homefill"></view> 首页
+    </view>
+    <view class="action text-gray" bindtap="toFindjob">
+      <view class="cuIcon-similar"></view> {{checkFlag == 1 ? '找工作' : '找活'}}
+    </view>
+    <view class="action text-red add-action">
+      <button class="cu-btn cuIcon-add bg-red shadow"></button>
+       发布
+    </view>
+    <view class="action text-gray" bindtap="toSysmsg">
+      <view class="cuIcon-notice">
+      </view>
+      {{checkFlag == 1 ? '消息中心' : '消息'}}
+    </view>
+    <view class="action text-gray" bindtap="toMyuser">
+      <view class="cuIcon-my">
+      </view>
+      我的
+    </view>
+  </view>

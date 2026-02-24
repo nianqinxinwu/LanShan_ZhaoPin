@@ -1,0 +1,93 @@
+<import src="../index/templates/ejoblist.wxml" />
+
+
+   <view class="container">
+
+    <view class="filter-tabs">
+      <view class="tab {{currentTab == -1 ? 'active' : ''}}" bindtap="switchTab" data-status="-1">全部</view>
+      <view class="tab {{currentTab == 1 ? 'active' : ''}}" bindtap="switchTab" data-status="1">发布中</view>
+      <view class="tab {{currentTab == 3 ? 'active' : ''}}" bindtap="switchTab" data-status="3">已过期</view>
+    </view>
+
+
+    <view wx:if="{{list.length>0}}" class="joblist_2" wx:for="{{list}}">
+                            <view class="title_2" >
+
+                              <view class="jobinfo_2">
+
+                                    <view class="jobinfoleft_2">
+                                                    <view class="address_2">
+                                                            <view class="jobname_2">{{item.jobtitle}} </view>  
+
+                                                            <view  class="moneyinfo_2"><block  wx:if="{{item.money == 0}}">面议</block><block  wx:else>{{item.money}}</block></view>
+                                                                <view class='vprice2' ></view>
+                                                           
+                                                    </view>
+
+                                                  
+
+                                                   
+
+                                      </view>
+
+                                  
+
+
+                            
+                            </view>
+
+
+
+
+                                       <view class="detail_2">
+                                          
+                                           <view class="info_2">
+                                          
+                                                  <view class="companyinfo_2" style="font-size:.9rem;"> 
+                                                      {{item.companyname}}     
+                                                     
+                                                  </view>
+                                                  <view class="jobmoney_2">
+                                                        
+                                                        <view class="time_2">{{item.createtime}} </view>
+                                                                                                               
+
+                                                   </view>
+                                            </view>
+                                      </view>
+
+                                      <view class="payitem">
+
+<view bindtap='cancleSave' data-id="{{item.id}}">取消收藏</view>
+ <view bindtap='toJobDetail' data-id="{{item.jobid}}">查看职位</view>
+
+ </view>
+                            </view>
+                </view>
+
+
+<!--
+      <view class="orderlist" wx:for-items="{{list}}">
+        <view class="orderid">{{title[0]}}{{item.jobtitle}}</view>
+        <view class="content">
+                <view class="item">{{title[1]}}:{{item.companyname}}</view>
+            <view class="item">联系电话:{{item.tel}}</view>
+            <view class="item">负责人:{{item.mastername}}</view>
+            <view class="item">创建时间:{{item.createtime}}</view>
+            <view class="payitem">
+
+            <view hidden="" bindtap='cancleSave' data-id="{{item.id}}" >取消收藏</view>
+             <view hidden="" bindtap='toJob' data-id="{{item.jobid}}">{{title[2]}}</view>
+            
+             </view>
+  
+        </view>
+      </view>
+
+    -->
+
+    <view class="nodata" wx:if="{{list.length == 0}}">
+    <image   src="../../imgs/icon/nodata.png"></image>
+</view>
+</view>
+

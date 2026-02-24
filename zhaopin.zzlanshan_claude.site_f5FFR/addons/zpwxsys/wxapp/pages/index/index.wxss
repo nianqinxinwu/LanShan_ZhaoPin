@@ -1,0 +1,345 @@
+@import '../templates/css/house.wxss';
+
+page {
+    background: #f5f5f5;
+}
+
+.container_2 {
+    background-color: #f5f5f5;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 140rpx;
+}
+
+/* ========== 顶部蓝色背景 ========== */
+
+.top-blue-bg {
+    width: 750rpx;
+    background: #2577f5;
+    padding-bottom: 60rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ========== 广告轮播 ========== */
+
+.banner-container {
+    width: 670rpx;
+    height: 320rpx;
+    position: relative;
+    border-radius: 20rpx;
+    overflow: hidden;
+    margin-top: 20rpx;
+}
+
+.banner-swiper {
+    width: 100%;
+    height: 320rpx;
+}
+
+.banner-img {
+    width: 100%;
+    height: 320rpx;
+    border-radius: 20rpx;
+}
+
+.banner-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-dot {
+    margin: 0 8rpx;
+    width: 16rpx;
+    height: 16rpx;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transition: all .3s;
+}
+
+.banner-dot-active {
+    background: #fff;
+    width: 32rpx;
+    border-radius: 8rpx;
+}
+
+/* ========== Banner占位 ========== */
+
+.banner-placeholder {
+    width: 100%;
+    height: 320rpx;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%);
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-ph-icon {
+    font-size: 80rpx;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 16rpx;
+}
+
+.banner-ph-text {
+    font-size: 26rpx;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ========== 搜索栏 ========== */
+
+.search-bar {
+    width: 630rpx;
+    height: 76rpx;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 38rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20rpx;
+    padding: 0 20rpx;
+    position: relative;
+    z-index: 10;
+}
+
+.search-city {
+    font-size: 28rpx;
+    color: #fff;
+    font-weight: 600;
+    white-space: nowrap;
+    padding-right: 20rpx;
+    border-right: 2rpx solid rgba(255, 255, 255, 0.4);
+}
+
+.search-city .fa-angle-down {
+    margin-left: 6rpx;
+    font-size: 24rpx;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-input {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20rpx;
+}
+
+.search-input icon {
+    margin-right: 10rpx;
+}
+
+.search-input text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 26rpx;
+}
+
+.search-input input {
+    flex: 1;
+    color: #fff;
+    font-size: 26rpx;
+}
+
+/* ========== 金刚区 ========== */
+
+.category-grid {
+    width: 670rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 30rpx;
+    margin-top: -40rpx;
+    padding: 30rpx 0 10rpx 0;
+    box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 5;
+}
+
+.category-item {
+    width: 134rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+.category-item image {
+    width: 80rpx;
+    height: 80rpx;
+    margin-bottom: 8rpx;
+}
+
+.category-item text {
+    font-size: 22rpx;
+    color: #333;
+}
+
+/* ========== 岗位卡片 ========== */
+
+.job-card {
+    width: 670rpx;
+    background: #fff;
+    border-radius: 16rpx;
+    margin: 0 auto 20rpx auto;
+    padding: 28rpx 30rpx;
+    box-shadow: 0 2rpx 16rpx rgba(59, 83, 115, 0.08);
+}
+
+.job-card:first-child {
+    margin-top: 20rpx;
+}
+
+.job-card-row1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14rpx;
+}
+
+.job-card-title {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #222;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.job-card-top {
+    font-size: 20rpx;
+    color: #fff;
+    background: #880015;
+    padding: 4rpx 16rpx;
+    border-radius: 6rpx;
+    margin-left: 16rpx;
+    white-space: nowrap;
+}
+
+.job-card-row2 {
+    font-size: 24rpx;
+    color: #888;
+    margin-bottom: 14rpx;
+}
+
+.job-card-row2 .fa {
+    margin-right: 8rpx;
+    color: #bbb;
+}
+
+.job-card-row3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 16rpx;
+}
+
+.job-tag {
+    font-size: 22rpx;
+    color: #666;
+    background: #f3f4f6;
+    padding: 6rpx 16rpx;
+    border-radius: 6rpx;
+    margin-right: 12rpx;
+    margin-bottom: 8rpx;
+}
+
+.job-card-row4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 16rpx;
+}
+
+.job-card-price {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #ff5a2d;
+}
+
+.job-card-num {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.job-card-row5 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16rpx;
+    border-top: 1rpx solid #f0f0f0;
+}
+
+.job-card-addr {
+    font-size: 24rpx;
+    color: #FF830D;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.job-card-addr .fa {
+    color: #FF830D;
+    margin-right: 6rpx;
+}
+
+.job-card-apply {
+    font-size: 26rpx;
+    color: #fff;
+    background: #182078;
+    padding: 12rpx 40rpx;
+    border-radius: 30rpx;
+    margin-left: 20rpx;
+    white-space: nowrap;
+}
+
+/* ========== 查看更多 ========== */
+
+.morejob {
+    width: 710rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #fff;
+    margin-top: 10rpx;
+    margin-bottom: 20rpx;
+    color: #3366CC;
+    font-size: 28rpx;
+    text-align: center;
+    border-radius: 16rpx;
+}
+
+/* ========== 底部信息 ========== */
+
+.footerinfo {
+    display: flex;
+    flex-direction: row;
+    font-size: 22rpx;
+    width: 750rpx;
+    justify-content: center;
+    padding-bottom: 30rpx;
+    color: #bbb;
+}
+
+.footerinfo view {
+    width: 150rpx;
+    text-align: center;
+}
+
+/* ========== 底部导航按钮样式 ========== */
+
+button::after {
+    border: 0;
+}

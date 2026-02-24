@@ -1,0 +1,33 @@
+<view class="container">
+  <form bindsubmit="bindSave" report-submit>
+
+  
+  <view class="register" bindtap="toPerLogin"></view>
+
+  <view class="login">绑定账号</view>
+
+  <view class="inputlist">
+  
+  
+
+    
+
+        <view class="inputitem">
+  
+         <view><image src="../../imgs/icon/pwd.png"></image></view>
+         <view><input  type="number" name="tel" value="{{tel}}" placeholder="请输入手机号" style="width:300rpx;"  placeholder-style="font-size:14px;" disabled /> </view>
+         <view> <button class="code" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"  >获取手机号</button></view>
+
+        </view>
+
+
+
+        <view class="button"><button formType="submit">注册绑定</button></view>
+
+  </view>
+
+
+
+
+</form>
+</view>
