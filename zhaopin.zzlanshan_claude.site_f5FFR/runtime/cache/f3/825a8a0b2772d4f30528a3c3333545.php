@@ -1,4 +1,0 @@
-<?php
-//000000007200
- exit();?>
-s:101:"{"session_key":"oOE4YnJ4RjE1VMF30ffuaA==","openid":"oWadU10pYrGM16C7C7ayb2kWJJGQ","uid":1,"scope":16}";
